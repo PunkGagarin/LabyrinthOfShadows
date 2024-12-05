@@ -1,6 +1,8 @@
+using Audio;
 using UI.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace UI
 {
@@ -9,6 +11,16 @@ namespace UI
         [SerializeField] private Button closeButton;
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider soundSlider;
+        
+        private SoundManager soundManager;
+        private MusicManager musicManager;
+
+        [Inject]
+        void Init(SoundManager soundManager, MusicManager musicManager)
+        {
+            this.musicManager = musicManager;
+            this.soundManager = soundManager;
+        }
 
         private void Awake()
         {
@@ -16,6 +28,21 @@ namespace UI
             musicSlider.onValueChanged.AddListener(OnMusicSliderValueChanged);
             soundSlider.onValueChanged.AddListener(OnSoundSliderValueChanged);
             Hide();
+        }
+
+
+        private void Start()
+        {
+            soundSlider.value = soundManager.Volume;
+            musicSlider.value = musicManager.Volume;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnCloseButtonClicked();
+            }
         }
 
         private void OnDestroy()
@@ -32,12 +59,13 @@ namespace UI
 
         private void OnMusicSliderValueChanged(float value)
         {
-            // todo
+            musicManager.ChangeVolume(value);
         }
-
+        
         private void OnSoundSliderValueChanged(float value)
         {
-            // todo
+            soundManager.ChangeVolume(value);
         }
+
     }
 }
