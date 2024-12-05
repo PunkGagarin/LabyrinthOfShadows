@@ -10,6 +10,7 @@ namespace UI
     
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button optionsButton;
+        [SerializeField] private OptionsDialog optionsDialog;
         
         private Loader loader;
       
@@ -35,7 +36,7 @@ namespace UI
 
         private void OnOptionsClicked()
         {
-            // todo
+            optionsDialog.Show();
         }
 
         private void OnStartGameClicked()
