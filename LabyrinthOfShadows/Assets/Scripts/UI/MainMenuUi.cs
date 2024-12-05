@@ -1,3 +1,4 @@
+using Audio;
 using SceneLoader;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ namespace UI
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button optionsButton;
         [SerializeField] private OptionsDialog optionsDialog;
+
+        [Inject] private SoundManager _audioManager;
         
         private Loader loader;
       
@@ -42,6 +45,7 @@ namespace UI
         private void OnStartGameClicked()
         {
              loader.Load(Loader.Scene.GamePlayScene);
+             _audioManager.PlaySoundByType(GameAudioType.ButtonClick, 0, Vector3.zero);
         }
     }
 }

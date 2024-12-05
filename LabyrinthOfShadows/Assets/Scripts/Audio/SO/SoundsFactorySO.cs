@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Audio
 {
 
-    // [CreateAssetMenu(menuName = "Gameplay/Audio/SoundsFactorySO", fileName = "SoundsFactorySO")]
+    [CreateAssetMenu(menuName = "Gameplay/Audio/SoundsFactorySO", fileName = "SoundsFactorySO")]
     public class SoundsFactorySO : ScriptableObject
     {
         [SerializeField]
