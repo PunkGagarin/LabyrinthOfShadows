@@ -24,13 +24,13 @@ public class PlayerMovementManager : MonoBehaviour
         var newPosition = _playerView.Rigidbody2D.position +
                           movementVector * (Time.fixedDeltaTime * _playerSettings.MoveSpeed);
 
-        // if (IsPositionInsideBounds(newPosition))
-        //     MoveTo(newPosition);
-        // else
-        // {
-            // var clampPosition = ClampPositionToBounds(newPosition);
+        if (IsPositionInsideBounds(newPosition))
             MoveTo(newPosition);
-        // }
+        else
+        {
+            var clampPosition = ClampPositionToBounds(newPosition);
+            MoveTo(clampPosition);
+        }
     }
 
     private void MoveTo(Vector2 newPosition)
