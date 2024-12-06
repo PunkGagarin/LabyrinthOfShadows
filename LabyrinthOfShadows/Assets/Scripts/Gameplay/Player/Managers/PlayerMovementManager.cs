@@ -9,6 +9,7 @@ public class PlayerMovementManager : MonoBehaviour
     [Inject] private GameInputManager _gameInputManager;
     [Inject] private GameplayManager _gameplayManager;
     [Inject] private PlayerSettings _playerSettings;
+    [Inject] private LevelBoundsView _levelBoundsView;
 
     private void FixedUpdate()
     {
@@ -20,8 +21,32 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void Move(Vector2 movementVector)
     {
-        var newPosition = _playerView.Rigidbody2D.position + movementVector * (Time.fixedDeltaTime * _playerSettings.MoveSpeed);
+        var newPosition = _playerView.Rigidbody2D.position +
+                          movementVector * (Time.fixedDeltaTime * _playerSettings.MoveSpeed);
+
+        // if (IsPositionInsideBounds(newPosition))
+        //     MoveTo(newPosition);
+        // else
+        // {
+            // var clampPosition = ClampPositionToBounds(newPosition);
+            MoveTo(newPosition);
+        // }
+    }
+
+    private void MoveTo(Vector2 newPosition)
+    {
         _playerView.Rigidbody2D.MovePosition(newPosition);
     }
 
+    private bool IsPositionInsideBounds(Vector2 position)
+    {
+        return _levelBoundsView.LevelBounds.OverlapPoint(position);
+    }
+
+    private Vector2 ClampPositionToBounds(Vector2 position)
+    {
+        // Находим ближайшую точку на коллайдере к позиции
+        var closestPoint = _levelBoundsView.LevelBounds.ClosestPoint(position);
+        return closestPoint;
+    }
 }
