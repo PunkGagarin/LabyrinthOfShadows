@@ -7,13 +7,13 @@ namespace UI.LevelResult
     {
         [SerializeField] private Button restartButton;
 
-        private void Awake()
+        private new void Awake()
         {
             base.Awake();
             restartButton.onClick.AddListener(OnRestartClicked);
         }
 
-        private void OnDestroy()
+        private new void OnDestroy()
         {
             base.OnDestroy();
             restartButton.onClick.RemoveListener(OnRestartClicked);

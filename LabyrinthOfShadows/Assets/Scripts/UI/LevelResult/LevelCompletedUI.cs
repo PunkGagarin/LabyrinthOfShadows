@@ -8,13 +8,13 @@ namespace UI.LevelResult
     {
         [SerializeField] private Button nextLevelButton;
    
-        private void Awake()
+        private new void Awake()
         {
             base.Awake();
             nextLevelButton.onClick.AddListener(OnNextLevelClicked);
         }
 
-        private void OnDestroy()
+        private new void OnDestroy()
         {
             base.OnDestroy();
             nextLevelButton.onClick.RemoveListener(OnNextLevelClicked);
