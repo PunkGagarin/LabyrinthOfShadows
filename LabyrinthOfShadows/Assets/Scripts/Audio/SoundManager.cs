@@ -9,8 +9,7 @@ namespace Audio
         private const string PLAYER_PREFS_NAME = "SoundEffectVolume";
         private const float DEFAULT_VOLUME = 1f;
 
-        [SerializeField] 
-        private SoundsFactorySO soundsFactory;
+        [SerializeField] private SoundsFactorySO soundsFactory;
 
         private void Awake()
         {
