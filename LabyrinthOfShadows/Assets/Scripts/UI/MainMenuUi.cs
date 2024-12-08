@@ -13,8 +13,6 @@ namespace UI
         [SerializeField] private Button optionsButton;
         [SerializeField] private OptionsDialog optionsDialog;
 
-        [Inject] private SoundManager _audioManager;
-        
         private Loader loader;
       
         [Inject]
@@ -44,8 +42,7 @@ namespace UI
 
         private void OnStartGameClicked()
         {
-             loader.Load(Loader.Scene.GamePlayScene);
-             _audioManager.PlaySoundByType(GameAudioType.ButtonClick, 0, Vector3.zero);
+            loader.Load(Loader.Scene.GamePlayScene);
         }
     }
 }

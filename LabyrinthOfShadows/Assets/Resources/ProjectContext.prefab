@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89ee917ef2de4546acd2b51ea8921a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsFactory: {fileID: 0}
+  soundsFactory: {fileID: 11400000, guid: 4f38454c729d088438e69e438fc0edf6, type: 2}
 --- !u!1 &3078406243180757596
 GameObject:
   m_ObjectHideFlags: 0
