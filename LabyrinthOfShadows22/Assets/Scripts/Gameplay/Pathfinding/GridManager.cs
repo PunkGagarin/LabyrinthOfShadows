@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -39,9 +40,22 @@ namespace Gameplay.Pathfinding
             return node;
         }
 
+        public void PrepareNodesForSearch()
+        {
+            foreach (var (key, node) in _nodes)
+            {
+                node.GCost = Int32.MaxValue;
+                node.Parent = null;
+            }
+        }
+
         public List<TileNode> GetNeighbours(TileNode node)
         {
-            Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+            Vector2Int[] directions =
+            {
+                Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right, new(1, 1),
+                new(1, -1), new(-1, 1), new(-1, -1)
+            };
             var neighbours = new List<TileNode>();
 
             foreach (var dir in directions)
