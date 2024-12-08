@@ -11,11 +11,9 @@ namespace SceneLoader
             MainMenuScene,
             GamePlayScene,
             SelectLevelScene,
-            LevelCompletedScene,
-            LevelFailedScene,
             LoadingScene
         }
-    
+
         public void Load(Scene targetScene)
         {
             Loader.targetScene = targetScene;
@@ -24,7 +22,7 @@ namespace SceneLoader
 
         public void LoaderCallback()
         {
-            SceneManager.LoadScene(targetScene.ToString());   
+            SceneManager.LoadScene(targetScene.ToString());
         }
     }
 }
