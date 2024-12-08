@@ -23,11 +23,6 @@ namespace UI
             Hide();
         }
 
-        private void Start()
-        {
-            Time.timeScale = 1f;
-        }
-        
         private void OnDestroy()
         {
             resumeButton.onClick.RemoveListener(OnResumeButtonClicked);
@@ -42,19 +37,32 @@ namespace UI
 
         private void OnMainMenuButtonClicked()
         {
-            UnPause();
+            Toggle();
             loader.Load(Loader.Scene.MainMenuScene);
         }
 
         private void OnResumeButtonClicked()
         {
-            UnPause();
+            Toggle();
             Hide();
         }
 
-        private void UnPause()
+        private void Toggle()
         {
-            Time.timeScale = 0f;
+            if (Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;    
+            }
+            else
+            {
+                Time.timeScale = 0f;
+            }
+        }
+        
+        public void ShowPause()
+        {
+            Toggle();
+            Show();
         }
     }
 }
