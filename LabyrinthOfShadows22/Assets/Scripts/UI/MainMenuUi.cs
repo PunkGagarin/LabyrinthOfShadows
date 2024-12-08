@@ -1,4 +1,3 @@
-using Audio;
 using SceneLoader;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,13 +7,12 @@ namespace UI
 {
     public class MainMenuUi : MonoBehaviour
     {
-    
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button optionsButton;
         [SerializeField] private OptionsDialog optionsDialog;
 
         private Loader loader;
-      
+
         [Inject]
         public void Init(Loader loader)
         {
@@ -31,8 +29,6 @@ namespace UI
         {
             startGameButton.onClick.RemoveListener(OnStartGameClicked);
             optionsButton.onClick.RemoveListener(OnOptionsClicked);
-        
-            Time.timeScale = 1f; 
         }
 
         private void OnOptionsClicked()

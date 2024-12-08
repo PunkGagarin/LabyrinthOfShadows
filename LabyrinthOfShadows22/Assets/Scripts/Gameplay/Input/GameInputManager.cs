@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gameplay.Managers
 {
@@ -17,6 +18,11 @@ namespace Gameplay.Managers
             var inputVector = _inputSystemActions.Player.Move.ReadValue<Vector2>();
             return inputVector.normalized;
             // return Vector2.zero;
+        }
+
+        private void OnDisable()
+        {
+            _inputSystemActions.Disable();
         }
 
         // public Vector3 GetMousePosition()
