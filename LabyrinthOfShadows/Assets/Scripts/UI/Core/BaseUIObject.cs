@@ -1,22 +1,19 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI.Core
 {
     public class BaseUIObject : MonoBehaviour
     {
-
-        [SerializeField]
-        private GameObject context;
+        [SerializeField] protected GameObject content;
 
         public void Show()
         {
-            context.SetActive(true);
+            content.SetActive(true);
         }
 
         public void Hide()
         {
-            context.SetActive(false);
+            content.SetActive(false);
         }
 
     }

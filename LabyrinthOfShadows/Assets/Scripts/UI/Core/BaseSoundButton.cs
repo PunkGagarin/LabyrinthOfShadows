@@ -5,14 +5,15 @@ using Zenject;
 
 namespace UI.Core
 {
-    public class BaseSoundButton : BaseUIObject
+    public class BaseSoundButton : MonoBehaviour
     {
-        [SerializeField] private Button button;
+        private Button button;
         
         [Inject] private SoundManager soundManager;
 
         private void Awake()
         {
+            button = GetComponent<Button>();
             button.onClick.AddListener(OnButtonClicked);
         }
 
