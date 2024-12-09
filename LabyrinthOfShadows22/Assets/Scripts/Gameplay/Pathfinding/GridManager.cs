@@ -81,5 +81,10 @@ namespace Gameplay.Pathfinding
         }
 
 
+        public bool CheckGridForWalkable(Vector2Int playerPosition)
+        {
+            var node = GetNode(playerPosition);
+            return node.IsWalkable;
+        }
     }
 }
