@@ -8,7 +8,6 @@ namespace Gameplay.Managers
         public event EventHandler OnGamePaused;
         public event EventHandler OnGameUnPaused;
 
-        private bool _isGamePaused = false;
         private bool _isPlaying = true;
 
         private void Update()
@@ -26,8 +25,8 @@ namespace Gameplay.Managers
 
         public void TogglePauseGame()
         {
-            _isGamePaused = !_isGamePaused;
-            if (_isGamePaused)
+            _isPlaying = !_isPlaying;
+            if (_isPlaying)
             {
                 Time.timeScale = 0f;
                 OnGamePaused?.Invoke(this, EventArgs.Empty);
