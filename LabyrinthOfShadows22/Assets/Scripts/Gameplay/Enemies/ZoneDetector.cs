@@ -18,10 +18,8 @@ namespace Gameplay.Enemies
         public void OnTriggerEnter2D(Collider2D other)
         {
             
-            Debug.Log("SomeOneEnter the zone");
             if (other.CompareTag("Player"))
             {
-                Debug.Log("PlayerEnter zone");
                 OnZonePlayerEnter.Invoke();
             }
         }

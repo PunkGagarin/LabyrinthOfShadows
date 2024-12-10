@@ -8,6 +8,7 @@ namespace Gameplay.Enemies
     public class Enemy : BaseEnemy
     {
         [Inject] private PlayerView _playerView;
+        [Inject] private SafeZoneManager _safeZoneManager;
 
         [SerializeField]
         private ZoneDetector _zoneDetector;
@@ -80,6 +81,12 @@ namespace Gameplay.Enemies
             }
             _path = pathNodes.Select(node => node.Position).ToList();
             _pathIndex = _path.Count > 0 ? 1 : 0;
+        }
+
+        protected override bool CanMove()
+        {
+            bool isInSafeZone = _safeZoneManager.IsPlayerInSafeZone;
+            return base.CanMove() && !isInSafeZone;
         }
     }
 }

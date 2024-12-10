@@ -42,7 +42,7 @@ namespace Gameplay.Enemies
 
         protected void MoveToNextPoint()
         {
-            if (_path != null && _pathIndex < _path.Count)
+            if (CanMove())
             {
                 Vector3 worldPos = _gridManager.WalkableTilemap.CellToWorld(new Vector3Int(_path[_pathIndex].x,
                     _path[_pathIndex].y, 0)) + _gridManager.WalkableTilemap.cellSize * 0.5f;
@@ -53,6 +53,11 @@ namespace Gameplay.Enemies
                 if (Vector3.Distance(transform.position, worldPos) < 0.01f)
                     ReachPointLogic();
             }
+        }
+
+        protected virtual bool CanMove()
+        {
+            return _path != null && _pathIndex < _path.Count;
         }
 
         protected virtual void ReachPointLogic()
