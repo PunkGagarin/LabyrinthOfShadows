@@ -10,18 +10,13 @@ namespace Gameplay.Enemies
 {
     public class EnemyViewProvider : MonoBehaviour
     {
-        [SerializeField]
-        private GridManager _gridManager;
-
-        private Pathfinder _pathfinder;
+        [Inject] private GridManager _gridManager;
+        [Inject]  private Pathfinder _pathfinder;
+        [Inject]  private PlayerView _playerView;
         // [Inject] private GameplayManager _gameplayManager;
 
         [SerializeField]
-        private PlayerView _playerView;
-
-        [SerializeField]
         private float _searchPathDelay = 0.5f;
-
         private float _currentSearchPath = 5f;
 
 
@@ -39,7 +34,6 @@ namespace Gameplay.Enemies
 
         private void Start()
         {
-            _pathfinder = new Pathfinder(_gridManager);
             currentCell = currentCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
         }
 
