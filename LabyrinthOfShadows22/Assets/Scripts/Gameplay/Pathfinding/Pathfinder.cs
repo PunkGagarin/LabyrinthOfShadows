@@ -12,59 +12,6 @@ namespace Gameplay.Pathfinding
         private const int DIAGONAL_COST = 14;
         private const int STRAIGHT_COST = 10;
 
-
-        // public List<Vector2Int> FindPath(Vector2Int start, Vector2Int end)
-        // {
-        //     TileNode startTileNode = _gridManager.GetNode(start);
-        //     TileNode endTileNode = _gridManager.GetNode(end);
-        //
-        //     if (startTileNode == null || endTileNode == null || !startTileNode.IsWalkable || !endTileNode.IsWalkable)
-        //         return null;
-        //
-        //     var openSet = new List<TileNode> { startTileNode };
-        //     var closedSet = new HashSet<TileNode>();
-        //
-        //     startTileNode.GCost = 0;
-        //     startTileNode.HCost = Heuristic(start, end);
-        //
-        //     while (openSet.Count > 0)
-        //     {
-        //         // Находим узел с наименьшим FCost
-        //         openSet.Sort((a, b) => a.FCost.CompareTo(b.FCost));
-        //         TileNode current = openSet[0];
-        //
-        //         if (current == endTileNode)
-        //         {
-        //             return ReconstructPath(endTileNode);
-        //         }
-        //
-        //         openSet.Remove(current);
-        //         closedSet.Add(current);
-        //
-        //         foreach (var neighbor in _gridManager.GetNeighbors(current))
-        //         {
-        //             if (closedSet.Contains(neighbor)) continue;
-        //
-        //             int tentativeG = current.GCost + 1; // стоимость шага между соседними клетками = 1
-        //             if (!openSet.Contains(neighbor))
-        //             {
-        //                 neighbor.Parent = current;
-        //                 neighbor.GCost = tentativeG;
-        //                 neighbor.HCost = Heuristic(neighbor.Position, end);
-        //                 openSet.Add(neighbor);
-        //             }
-        //             else if (tentativeG < neighbor.GCost)
-        //             {
-        //                 neighbor.Parent = current;
-        //                 neighbor.GCost = tentativeG;
-        //                 neighbor.HCost = Heuristic(neighbor.Position, end);
-        //             }
-        //         }
-        //     }
-        //
-        //     return null; // путь не найден
-        // }
-
         public List<TileNode> FindPath2(Vector2Int start, Vector2Int end)
         {
             TileNode startTileNode = _gridManager.GetNode(start);
