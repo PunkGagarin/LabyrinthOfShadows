@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Managers;
 using SceneLoader;
 using UI.Core;
 using UnityEngine;
@@ -15,15 +16,15 @@ namespace UI
         [SerializeField] private OptionsDialog optionsDialog;
 
         [Inject] private Loader loader;
-        [Inject] private GameStateManager gameStateManager;
+        [Inject] private GameplayManager gameplayManager;
 
         private void Awake()
         {
             resumeButton.onClick.AddListener(OnResumeButtonClicked);
             mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
             optionsButton.onClick.AddListener(OnOptionsButtonClicked);
-            gameStateManager.OnGamePaused += OnGamePaused;
-            gameStateManager.OnGameUnPaused += OnGameUnPaused;
+            gameplayManager.OnGamePaused += OnGamePaused;
+            gameplayManager.OnGameUnPaused += OnGameUnPaused;
             Hide();
         }
 
@@ -32,8 +33,8 @@ namespace UI
             resumeButton.onClick.RemoveListener(OnResumeButtonClicked);
             mainMenuButton.onClick.RemoveListener(OnMainMenuButtonClicked);
             optionsButton.onClick.RemoveListener(OnOptionsButtonClicked);
-            gameStateManager.OnGamePaused -= OnGamePaused;
-            gameStateManager.OnGameUnPaused -= OnGameUnPaused;
+            gameplayManager.OnGamePaused -= OnGamePaused;
+            gameplayManager.OnGameUnPaused -= OnGameUnPaused;
         }
 
         private void OnOptionsButtonClicked()
@@ -43,13 +44,13 @@ namespace UI
 
         private void OnMainMenuButtonClicked()
         {
-            gameStateManager.TogglePauseGame();
+            gameplayManager.TogglePauseGame();
             loader.Load(Loader.Scene.MainMenuScene);
         }
 
         private void OnResumeButtonClicked()
         {
-            gameStateManager.TogglePauseGame();
+            gameplayManager.TogglePauseGame();
         }
 
         private void OnGameUnPaused(object sender, EventArgs e)
