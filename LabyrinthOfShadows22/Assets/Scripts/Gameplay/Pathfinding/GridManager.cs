@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Zenject;
 
 namespace Gameplay.Pathfinding
 {
     public class GridManager : MonoBehaviour
     {
-        [field: SerializeField]
-        public Tilemap WalkableTilemap { get; private set; }
+        [Inject] private TilemapViewProvider _tilemapView;
 
-        [field: SerializeField]
+        public Tilemap WalkableTilemap { get; private set; }
         public Tilemap ObstacleTilemap { get; private set; }
 
         private Dictionary<Vector2Int, TileNode> _nodes = new();
 
         private void Awake()
         {
+            WalkableTilemap = _tilemapView.WalkableTilemap;
+            ObstacleTilemap = _tilemapView.ObstaclesTilemap;
+
             //размер тайлмапы ?????
             BoundsInt bounds = WalkableTilemap.cellBounds;
 
@@ -24,13 +27,18 @@ namespace Gameplay.Pathfinding
             {
                 for (int y = bounds.yMin; y < bounds.yMax; y++)
                 {
-                    Vector3Int tilePos = new Vector3Int(x, y, 0);
-                    if (WalkableTilemap.HasTile(tilePos))
-                    {
-                        bool walkable = ObstacleTilemap == null || !ObstacleTilemap.HasTile(tilePos);
-                        _nodes[new Vector2Int(x, y)] = new TileNode(new Vector2Int(x, y), walkable);
-                    }
+                    CreateTile(x, y);
                 }
+            }
+        }
+
+        private void CreateTile(int x, int y)
+        {
+            Vector3Int tilePos = new Vector3Int(x , y, 0);
+            if (WalkableTilemap.HasTile(tilePos))
+            {
+                bool walkable = ObstacleTilemap == null || !ObstacleTilemap.HasTile(tilePos);
+                _nodes[new Vector2Int(x, y)] = new TileNode(new Vector2Int(x, y), walkable);
             }
         }
 
@@ -53,8 +61,8 @@ namespace Gameplay.Pathfinding
         {
             Vector2Int[] directions =
             {
-                Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right, new(1, 1),
-                new(1, -1), new(-1, 1), new(-1, -1)
+                Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right, new(1, 1), new(1, -1),
+                new(-1, 1), new(-1, -1)
             };
             var neighbours = new List<TileNode>();
 

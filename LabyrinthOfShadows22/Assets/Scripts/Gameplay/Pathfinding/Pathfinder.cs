@@ -7,15 +7,11 @@ namespace Gameplay.Pathfinding
 {
     public class Pathfinder
     {
-        private GridManager _gridManager;
+        [Inject] private GridManager _gridManager;
 
         private const int DIAGONAL_COST = 14;
         private const int STRAIGHT_COST = 10;
 
-        public Pathfinder(GridManager gridManager)
-        {
-            _gridManager = gridManager;
-        }
 
         // public List<Vector2Int> FindPath(Vector2Int start, Vector2Int end)
         // {
