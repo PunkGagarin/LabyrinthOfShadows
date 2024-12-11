@@ -25,7 +25,6 @@ namespace Gameplay.Managers
 
         public void TogglePauseGame()
         {
-            _isPlaying = !_isPlaying;
             if (_isPlaying)
             {
                 Time.timeScale = 0f;
@@ -36,6 +35,7 @@ namespace Gameplay.Managers
                 Time.timeScale = 1f;
                 OnGameUnPaused?.Invoke(this, EventArgs.Empty);
             }
+            _isPlaying = !_isPlaying;
         }
     }
 }

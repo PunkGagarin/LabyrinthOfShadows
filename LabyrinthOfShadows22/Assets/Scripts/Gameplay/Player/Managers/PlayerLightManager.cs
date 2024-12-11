@@ -1,0 +1,39 @@
+using Gameplay.Managers;
+using Gameplay.Player.Settgins;
+using UnityEngine;
+using Zenject;
+
+namespace Gameplay.Player.Managers
+{
+    public class PlayerLightManager : MonoBehaviour
+    {
+        [SerializeField] private PlayerView playerView;
+
+        [Inject] private PlayerSettings playerSettings;
+        [Inject] private GameplayManager gameplayManager;
+
+        private float timer = 0f;
+
+        private void Update()
+        {
+            if (!gameplayManager.IsPlaying()) return;
+
+            timer += Time.deltaTime;
+            if (timer >= playerSettings.LightRadiusDecreasingInterval)
+            {
+                LowerLightLevel();
+                timer = 0f;
+            }
+        }
+
+        public void ResetLightLevel()
+        {
+            playerView.ConusLight.pointLightOuterRadius = playerSettings.MaxLightRadius;
+        }
+
+        private void LowerLightLevel()
+        {
+            playerView.ConusLight.pointLightOuterRadius -= playerSettings.LightRadiusDecreasePerSecond;
+        }
+    }
+}

@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Rigidbody2D>k__BackingField: {fileID: 0}
+  <ConusLight>k__BackingField: {fileID: 8555961128593279252}
 --- !u!1 &3520353445604343026
 GameObject:
   m_ObjectHideFlags: 0
