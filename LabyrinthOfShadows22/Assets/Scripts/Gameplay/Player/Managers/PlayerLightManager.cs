@@ -33,7 +33,13 @@ namespace Gameplay.Player.Managers
 
         private void LowerLightLevel()
         {
-            playerView.ConusLight.pointLightOuterRadius -= playerSettings.LightRadiusDecreasePerSecond;
+            if (playerView.ConusLight.pointLightOuterRadius == playerSettings.MinLightRadius) return;
+            float nextValue = playerView.ConusLight.pointLightOuterRadius - playerSettings.LightRadiusDecreasePerSecond;
+            if (nextValue <= playerSettings.MinLightRadius)
+            {
+                nextValue = playerSettings.MinLightRadius;
+            }
+            playerView.ConusLight.pointLightOuterRadius = nextValue;
         }
     }
 }

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Gameplay.Enemies
 {
-    public class Enemy : BaseEnemy
+    public class Enemy : BaseEnemy, IStoppable
     {
         [Inject] private PlayerView _playerView;
         [Inject] private SafeZoneManager _safeZoneManager;
@@ -20,6 +20,8 @@ namespace Gameplay.Enemies
         private Vector2Int _playerPosition;
 
         protected bool _isChasingPlayer = false;
+
+        public bool IsFlashlighted { get; set; } = false;
 
         protected override void Awake()
         {
@@ -86,7 +88,7 @@ namespace Gameplay.Enemies
         protected override bool CanMove()
         {
             bool isInSafeZone = _safeZoneManager.IsPlayerInSafeZone;
-            return base.CanMove() && !isInSafeZone;
+            return base.CanMove() && !isInSafeZone && !IsFlashlighted;
         }
     }
 }

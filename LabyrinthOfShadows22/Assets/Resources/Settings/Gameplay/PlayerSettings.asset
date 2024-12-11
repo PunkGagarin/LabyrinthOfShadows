@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 5
-  <LightRadiusDecreasePerSecond>k__BackingField: 0.5
+  <LightRadiusDecreasePerSecond>k__BackingField: 0.05
   <LightRadiusDecreasingInterval>k__BackingField: 3
   <MaxLightRadius>k__BackingField: 4
+  <MinLightRadius>k__BackingField: 0

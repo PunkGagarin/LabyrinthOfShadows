@@ -17,5 +17,8 @@ namespace Gameplay.Player.Settgins
 
         [field: SerializeField]
         public float MaxLightRadius { get; private set; } = 4f;
+        
+        [field: SerializeField]
+        public float MinLightRadius { get; private set; } = 0f;
     }
 }

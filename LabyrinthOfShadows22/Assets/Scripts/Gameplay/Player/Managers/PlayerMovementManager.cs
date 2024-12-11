@@ -1,3 +1,4 @@
+using System;
 using Gameplay.Managers;
 using Gameplay.Player.Settgins;
 using UnityEngine;
@@ -11,6 +12,14 @@ public class PlayerMovementManager : MonoBehaviour
     [Inject] private PlayerSettings _playerSettings;
     [Inject] private LevelBoundsView _levelBoundsView;
 
+
+    private float moveSpeed;
+
+    private void Awake()
+    {
+        moveSpeed = _playerSettings.MoveSpeed;
+    }
+
     private void FixedUpdate()
     {
         if (!_gameplayManager.IsPlaying()) return;
@@ -22,7 +31,7 @@ public class PlayerMovementManager : MonoBehaviour
     private void Move(Vector2 movementVector)
     {
         var newPosition = _playerView.Rigidbody2D.position +
-                          movementVector * (Time.fixedDeltaTime * _playerSettings.MoveSpeed);
+                          movementVector * (Time.fixedDeltaTime * moveSpeed);
 
         if (IsPositionInsideBounds(newPosition))
             MoveTo(newPosition);
