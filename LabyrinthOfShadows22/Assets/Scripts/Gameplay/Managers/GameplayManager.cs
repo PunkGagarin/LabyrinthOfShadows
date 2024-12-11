@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Managers
 {
@@ -9,6 +10,8 @@ namespace Gameplay.Managers
         public event EventHandler OnGameUnPaused;
 
         private bool _isPlaying = true;
+        
+        // [Inject] GameOverUI gameOverUI;
 
         private void Update()
         {
@@ -21,6 +24,12 @@ namespace Gameplay.Managers
         public bool IsPlaying()
         {
             return _isPlaying;
+        }
+
+        public void SetGameOver()
+        {
+            _isPlaying = false;
+            // gameOverUI.TurnOnGameOver();
         }
 
         public void TogglePauseGame()
@@ -36,6 +45,12 @@ namespace Gameplay.Managers
                 OnGameUnPaused?.Invoke(this, EventArgs.Empty);
             }
             _isPlaying = !_isPlaying;
+        }
+
+        public void SetLevelWon()
+        {
+            _isPlaying = false;
+            //levelWonUi.
         }
     }
 }

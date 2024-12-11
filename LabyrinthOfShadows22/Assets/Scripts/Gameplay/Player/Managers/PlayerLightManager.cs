@@ -7,7 +7,8 @@ namespace Gameplay.Player.Managers
 {
     public class PlayerLightManager : MonoBehaviour
     {
-        [SerializeField] private PlayerView playerView;
+        [SerializeField]
+        private PlayerView playerView;
 
         [Inject] private PlayerSettings playerSettings;
         [Inject] private GameplayManager gameplayManager;
@@ -36,9 +37,8 @@ namespace Gameplay.Player.Managers
             if (playerView.ConusLight.pointLightOuterRadius == playerSettings.MinLightRadius) return;
             float nextValue = playerView.ConusLight.pointLightOuterRadius - playerSettings.LightRadiusDecreasePerSecond;
             if (nextValue <= playerSettings.MinLightRadius)
-            {
                 nextValue = playerSettings.MinLightRadius;
-            }
+
             playerView.ConusLight.pointLightOuterRadius = nextValue;
         }
     }
