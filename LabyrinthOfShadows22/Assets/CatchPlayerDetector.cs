@@ -10,8 +10,6 @@ public class CatchPlayerDetector : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //EndGame
-            Debug.Log("Game Over");
             _gameplayManager.SetGameOver();
         }
     }

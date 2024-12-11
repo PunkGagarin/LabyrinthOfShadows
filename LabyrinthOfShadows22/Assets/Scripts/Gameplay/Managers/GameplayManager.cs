@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UI;
 using UnityEngine;
 using Zenject;
 
@@ -6,12 +6,11 @@ namespace Gameplay.Managers
 {
     public class GameplayManager : MonoBehaviour
     {
-        public event EventHandler OnGamePaused;
-        public event EventHandler OnGameUnPaused;
-
         private bool _isPlaying = true;
-        
-        // [Inject] GameOverUI gameOverUI;
+
+        [Inject] private PauseUi pauseUi;
+        [Inject] private LevelFailedUi levelFailedUi;
+        [Inject] private LevelCompletedUI levelCompletedUi;
 
         private void Update()
         {
@@ -26,31 +25,32 @@ namespace Gameplay.Managers
             return _isPlaying;
         }
 
-        public void SetGameOver()
-        {
-            _isPlaying = false;
-            // gameOverUI.TurnOnGameOver();
-        }
-
         public void TogglePauseGame()
         {
             if (_isPlaying)
             {
                 Time.timeScale = 0f;
-                OnGamePaused?.Invoke(this, EventArgs.Empty);
+                pauseUi.Show();
             }
             else
             {
                 Time.timeScale = 1f;
-                OnGameUnPaused?.Invoke(this, EventArgs.Empty);
+                pauseUi.Hide();
             }
+
             _isPlaying = !_isPlaying;
         }
 
         public void SetLevelWon()
         {
             _isPlaying = false;
-            //levelWonUi.
+            levelCompletedUi.Show();
+        }
+
+        public void SetGameOver()
+        {
+            _isPlaying = false;
+            levelFailedUi.Show();
         }
     }
 }
