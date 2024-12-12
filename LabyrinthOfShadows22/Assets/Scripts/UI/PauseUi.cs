@@ -1,4 +1,3 @@
-using System;
 using Gameplay.Managers;
 using SceneLoader;
 using UI.Core;
@@ -23,8 +22,6 @@ namespace UI
             resumeButton.onClick.AddListener(OnResumeButtonClicked);
             mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
             optionsButton.onClick.AddListener(OnOptionsButtonClicked);
-            gameplayManager.OnGamePaused += OnGamePaused;
-            gameplayManager.OnGameUnPaused += OnGameUnPaused;
             Hide();
         }
 
@@ -33,8 +30,6 @@ namespace UI
             resumeButton.onClick.RemoveListener(OnResumeButtonClicked);
             mainMenuButton.onClick.RemoveListener(OnMainMenuButtonClicked);
             optionsButton.onClick.RemoveListener(OnOptionsButtonClicked);
-            gameplayManager.OnGamePaused -= OnGamePaused;
-            gameplayManager.OnGameUnPaused -= OnGameUnPaused;
         }
 
         private void OnOptionsButtonClicked()
@@ -51,16 +46,6 @@ namespace UI
         private void OnResumeButtonClicked()
         {
             gameplayManager.TogglePauseGame();
-        }
-
-        private void OnGameUnPaused(object sender, EventArgs e)
-        {
-            Hide();
-        }
-
-        private void OnGamePaused(object sender, EventArgs e)
-        {
-            Show();
         }
     }
 }

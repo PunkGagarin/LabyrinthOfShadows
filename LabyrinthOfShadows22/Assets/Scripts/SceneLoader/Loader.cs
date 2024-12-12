@@ -10,7 +10,6 @@ namespace SceneLoader
         {
             MainMenuScene,
             GamePlayScene,
-            SelectLevelScene,
             LoadingScene
         }
 

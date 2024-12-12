@@ -42,7 +42,7 @@ namespace UI
 
         private void OnSelectLevelButtonClicked()
         {
-            loader.Load(Loader.Scene.SelectLevelScene);
+            loader.Load(Loader.Scene.GamePlayScene); //todo
         }
     }
 }
