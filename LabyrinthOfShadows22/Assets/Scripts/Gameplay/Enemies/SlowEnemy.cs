@@ -8,7 +8,7 @@ namespace Gameplay.Enemies
         
         protected override void Update()
         {
-            if (!_gameplayManager.IsPlaying())
+            if (!_gameplayManager.IsGamePlaying())
                 return;
 
             SearchPathToPlayerWithDealy();

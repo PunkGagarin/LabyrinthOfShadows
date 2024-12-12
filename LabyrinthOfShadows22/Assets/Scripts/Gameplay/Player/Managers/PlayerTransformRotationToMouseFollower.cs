@@ -19,7 +19,7 @@ namespace Gameplay.Player.Managers
 
         private void FixedUpdate()
         {
-            if (!_gameplayManager.IsPlaying())
+            if (!_gameplayManager.IsGamePlaying())
                 return;
         
             Vector2 lookDirection = GetLookDirection();

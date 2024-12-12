@@ -36,7 +36,7 @@ namespace Gameplay.Enemies
 
         protected virtual void Update()
         {
-            if (!_gameplayManager.IsPlaying())
+            if (!_gameplayManager.IsGamePlaying())
                 return;
         }
 
