@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MonsterZoneHighlighter : MonoBehaviour
+public class MonsterElementsHighlighterZone : MonoBehaviour
 {
 
     private void OnTriggerEnter2D(Collider2D other)
