@@ -5,6 +5,7 @@ namespace Gameplay.Enemies
     //todo: remake this class
     public class SlowEnemy : Enemy
     {
+        
         protected override void Update()
         {
             if (!_gameplayManager.IsPlaying())
