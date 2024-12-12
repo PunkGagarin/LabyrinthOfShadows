@@ -17,7 +17,7 @@ namespace Gameplay.Player.Managers
 
         private void Update()
         {
-            if (!gameplayManager.IsPlaying()) return;
+            if (!gameplayManager.IsGamePlaying()) return;
 
             timer += Time.deltaTime;
             if (timer >= playerSettings.LightRadiusDecreasingInterval)

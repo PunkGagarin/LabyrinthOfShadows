@@ -9,7 +9,6 @@ public class DetectEnemyFlashlight : MonoBehaviour
         if (other.CompareTag("Enemy") && enemy != null)
         {
             enemy.IsFlashlighted = true;
-            Debug.Log("Flashlighted");
         }
     }
 
@@ -19,7 +18,6 @@ public class DetectEnemyFlashlight : MonoBehaviour
         if (other.CompareTag("Enemy") && enemy != null)
         {
             enemy.IsFlashlighted = false;
-            Debug.Log("un Flashlighted");
         }
     }
 }

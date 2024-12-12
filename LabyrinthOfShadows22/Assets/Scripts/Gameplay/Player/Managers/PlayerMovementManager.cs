@@ -22,7 +22,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_gameplayManager.IsPlaying()) return;
+        if (!_gameplayManager.IsGamePlaying()) return;
 
         var movementVector = _gameInputManager.GetMovementVectorNormalized();
         Move(movementVector);

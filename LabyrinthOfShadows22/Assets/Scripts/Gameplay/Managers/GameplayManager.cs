@@ -6,28 +6,30 @@ namespace Gameplay.Managers
 {
     public class GameplayManager : MonoBehaviour
     {
-        private bool _isPlaying = true;
-
         [Inject] private PauseUi pauseUi;
         [Inject] private LevelFailedUi levelFailedUi;
         [Inject] private LevelCompletedUI levelCompletedUi;
 
+        private bool _isPlaying = true;
+        private bool _isPaused;
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (_isPlaying && Input.GetKeyDown(KeyCode.Escape))
             {
                 TogglePauseGame();
             }
         }
 
-        public bool IsPlaying()
+        public bool IsGamePlaying()
         {
-            return _isPlaying;
+            return _isPlaying && !_isPaused;
         }
 
         public void TogglePauseGame()
         {
-            if (_isPlaying)
+            Debug.Log("Trying to Toggle Pause");
+            if (!_isPaused)
             {
                 Time.timeScale = 0f;
                 pauseUi.Show();
@@ -37,8 +39,7 @@ namespace Gameplay.Managers
                 Time.timeScale = 1f;
                 pauseUi.Hide();
             }
-
-            _isPlaying = !_isPlaying;
+            _isPaused = !_isPaused;
         }
 
         public void SetLevelWon()
@@ -52,5 +53,13 @@ namespace Gameplay.Managers
             _isPlaying = false;
             levelFailedUi.Show();
         }
+    }
+
+    public enum GameState
+    {
+        Playing,
+        Paused,
+        GameOver,
+        Won
     }
 }

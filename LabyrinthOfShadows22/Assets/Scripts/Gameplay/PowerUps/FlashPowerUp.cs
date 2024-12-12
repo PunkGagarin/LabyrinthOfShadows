@@ -25,7 +25,7 @@ namespace Gameplay.PowerUps
 
         private void Update()
         {
-            if (!gameplayManager.IsPlaying()) return;
+            if (!gameplayManager.IsGamePlaying()) return;
 
             if (!isFlashing) return;
 
