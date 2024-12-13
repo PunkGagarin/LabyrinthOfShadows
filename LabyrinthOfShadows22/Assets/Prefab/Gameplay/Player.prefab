@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Rigidbody2D>k__BackingField: {fileID: 6401377909177162688}
   <ConusLight>k__BackingField: {fileID: 8555961128593279252}
+  <ConusLightCollider>k__BackingField: {fileID: 899421993961561499}
 --- !u!1 &3520353445604343026
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,8 +297,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9904631813367040}
-  - component: {fileID: 1472737746857381704}
   - component: {fileID: 1226497467073390135}
+  - component: {fileID: 899421993961561499}
   m_Layer: 10
   m_Name: ConusLightCollider
   m_TagString: Untagged
@@ -313,14 +314,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5981200905353044051}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 2.0182369, z: 2.1276596}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6090041728549421796}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1472737746857381704
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1226497467073390135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981200905353044051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcc552e8dbd549c1a6ba8ee4b172bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &899421993961561499
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,27 +377,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.1446698, y: 3.964996}
-      - {x: -0.00000035762787, y: 4.160083}
-      - {x: -1.0780894, y: 4.0041246}
-      - {x: -1.8658175, y: 3.63542}
-      - {x: -0.0075698122, y: 0.0035807155}
-      - {x: -0.007979162, y: 0.0043538865}
-      - {x: -0.01230143, y: 0.00410375}
-      - {x: 1.9073968, y: 3.51068}
+    - - {x: -0.15637779, y: 2.1281612}
+      - {x: -0.35732922, y: 2.0068436}
+      - {x: 0.0042194724, y: 0.06223631}
+      - {x: 0.39531818, y: 2.005801}
+      - {x: 0.122765064, y: 2.140882}
   m_UseDelaunayMesh: 0
---- !u!114 &1226497467073390135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5981200905353044051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fcc552e8dbd549c1a6ba8ee4b172bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7390566100866237200
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +432,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.37
+  m_Intensity: 1.8
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -455,8 +453,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 32.68
   m_PointLightOuterAngle: 56.07
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 4.0669894
+  m_PointLightInnerRadius: 2.2
+  m_PointLightOuterRadius: 4.58
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
