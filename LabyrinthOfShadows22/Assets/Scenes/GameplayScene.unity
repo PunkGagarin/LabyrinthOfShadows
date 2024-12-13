@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cb023e754340c4a89d0cff71b1536a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLevelIndex: 1
+  _defaultLevelIndex: 3
   _levelRepository: {fileID: 11400000, guid: 43a463a6d1551cc42ae006b797bfac1b, type: 2}
   _levelHolder: {fileID: 266774975}
 --- !u!1 &1294645772
