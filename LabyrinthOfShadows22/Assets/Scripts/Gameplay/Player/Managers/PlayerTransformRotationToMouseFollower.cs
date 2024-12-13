@@ -41,6 +41,7 @@ namespace Gameplay.Player.Managers
         
             Vector3 direction = (endPoint - startPoint).normalized;
         
+            // Debug.Log($" Direction: {direction}");
             return direction;
         }
     }
