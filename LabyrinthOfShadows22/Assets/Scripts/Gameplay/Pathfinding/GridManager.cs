@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Gameplay.Pathfinding
 {
-    public class GridManager : MonoBehaviour, IInitializable
+    public class GridManager : MonoBehaviour
     {
         [Inject] private LevelViewProvider _levelViewProvider;
 
@@ -15,8 +15,7 @@ namespace Gameplay.Pathfinding
 
         private Dictionary<Vector2Int, TileNode> _nodes = new();
 
-
-        public void Initialize()
+        private void Start()
         {
             WalkableTilemap = _levelViewProvider.TilemapViewProvider.WalkableTilemap;
             ObstacleTilemap = _levelViewProvider.TilemapViewProvider.ObstaclesTilemap;
@@ -89,12 +88,10 @@ namespace Gameplay.Pathfinding
             }
         }
 
-
         public bool CheckGridForWalkable(Vector2Int playerPosition)
         {
             var node = GetNode(playerPosition);
             return node.IsWalkable;
         }
-
     }
 }
