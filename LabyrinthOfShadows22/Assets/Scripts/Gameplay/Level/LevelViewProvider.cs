@@ -11,4 +11,7 @@ public class LevelViewProvider : MonoBehaviour
     
     [field: SerializeField]
     public TilemapViewProvider TilemapViewProvider { get; private set; }
+    
+    [field: SerializeField]
+    public PlayerWinViewProvider PlayerWinViewProvider { get; private set; }
 }

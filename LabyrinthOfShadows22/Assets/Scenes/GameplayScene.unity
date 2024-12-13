@@ -2028,7 +2028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridManager: {fileID: 999278643}
-  _tilemapViewProvider: {fileID: 0}
 --- !u!4 &711602867
 Transform:
   m_ObjectHideFlags: 0
@@ -2235,6 +2234,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -5946092043035421428, guid: bf1e056c70bc94c66bceca73f01b89a7, type: 2}
+    - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2995,8 +2998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cb023e754340c4a89d0cff71b1536a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultLevelIndex: 1
   _levelRepository: {fileID: 11400000, guid: 43a463a6d1551cc42ae006b797bfac1b, type: 2}
-  _levelHolder: {fileID: 0}
+  _levelHolder: {fileID: 266774975}
 --- !u!1 &1294645772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,50 +3611,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
---- !u!1 &1658781381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1658781383}
-  - component: {fileID: 1658781382}
-  m_Layer: 0
-  m_Name: CameraInstaller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1658781382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658781381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8083a8a1cff76e046b0f28f64a9596e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1658781383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658781381}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1950972038}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663125096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3811,6 +3771,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1771812157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771812158}
+  - component: {fileID: 1771812159}
+  m_Layer: 0
+  m_Name: Powerupinstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1771812158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771812157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1950972038}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1771812159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771812157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d270d3902628245b092b51e479e0edc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpSettings: {fileID: 11400000, guid: c806b2e000a7842368a4cbe84fda753d, type: 2}
 --- !u!1001 &1798125180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4515,6 +4520,7 @@ MonoBehaviour:
   - {fileID: 1817954170}
   - {fileID: 1094506656}
   - {fileID: 1225077738}
+  - {fileID: 1771812159}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -4547,11 +4553,11 @@ Transform:
   m_Children:
   - {fileID: 309378489}
   - {fileID: 765863889}
-  - {fileID: 1658781383}
   - {fileID: 711602867}
   - {fileID: 1817954171}
   - {fileID: 1094506657}
   - {fileID: 1225077737}
+  - {fileID: 1771812158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015045147
