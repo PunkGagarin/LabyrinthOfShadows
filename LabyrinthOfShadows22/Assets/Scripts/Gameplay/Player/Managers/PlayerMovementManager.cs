@@ -58,4 +58,14 @@ public class PlayerMovementManager : MonoBehaviour
         var closestPoint = _levelViewProvider.LevelBoundsView.LevelBounds.ClosestPoint(position);
         return closestPoint;
     }
+
+    public void IncreasePlayerSpeed(float value)
+    {
+        moveSpeed += value;
+    }
+
+    public void ResetPlayerSpeed()
+    {
+        moveSpeed = _playerSettings.MoveSpeed;
+    }
 }
