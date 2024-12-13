@@ -7,13 +7,19 @@ namespace Gameplay.Player.Managers
 {
     public class PlayerLightManager : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerView playerView;
+        [SerializeField] private PlayerView playerView;
 
         [Inject] private PlayerSettings playerSettings;
         [Inject] private GameplayManager gameplayManager;
 
         private float timer = 0f;
+        private float colliderScale = 0.70f;
+
+        private void Awake()
+        {
+            playerView.ConusLight.pointLightInnerRadius = playerSettings.MinLightRadius;
+            ResetLightLevel();
+        }
 
         private void Update()
         {
@@ -30,16 +36,26 @@ namespace Gameplay.Player.Managers
         public void ResetLightLevel()
         {
             playerView.ConusLight.pointLightOuterRadius = playerSettings.MaxLightRadius;
+            UpdateCollider(playerSettings.MaxLightRadius);
         }
 
         private void LowerLightLevel()
         {
             if (playerView.ConusLight.pointLightOuterRadius == playerSettings.MinLightRadius) return;
+            
             float nextValue = playerView.ConusLight.pointLightOuterRadius - playerSettings.LightRadiusDecreasePerSecond;
             if (nextValue <= playerSettings.MinLightRadius)
                 nextValue = playerSettings.MinLightRadius;
 
             playerView.ConusLight.pointLightOuterRadius = nextValue;
+            UpdateCollider(nextValue);
         }
+
+        private void UpdateCollider(float nextValue)
+        {
+            var value = nextValue * colliderScale;
+            playerView.ConusLightCollider.transform.localScale = new Vector3(value, value / 2, 1f);
+        }
+
     }
 }
