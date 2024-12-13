@@ -1,23 +1,26 @@
 using Gameplay.Enemies;
 using UnityEngine;
 
-public class DetectEnemyFlashlight : MonoBehaviour
+namespace Gameplay.Player
 {
-    public void OnTriggerEnter2D(Collider2D other)
+    public class DetectEnemyFlashlight : MonoBehaviour
     {
-        IStoppable enemy = other.GetComponent<IStoppable>();
-        if (other.CompareTag("Enemy") && enemy != null)
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            enemy.IsFlashlighted = true;
+            IStoppable enemy = other.GetComponent<IStoppable>();
+            if (other.CompareTag("Enemy") && enemy != null)
+            {
+                enemy.IsFlashlighted = true;
+            }
         }
-    }
 
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        IStoppable enemy = other.GetComponent<IStoppable>();
-        if (other.CompareTag("Enemy") && enemy != null)
+        public void OnTriggerExit2D(Collider2D other)
         {
-            enemy.IsFlashlighted = false;
+            IStoppable enemy = other.GetComponent<IStoppable>();
+            if (other.CompareTag("Enemy") && enemy != null)
+            {
+                enemy.IsFlashlighted = false;
+            }
         }
     }
 }

@@ -11,10 +11,8 @@ namespace Gameplay.PowerUps
         [SerializeField] private CircleCollider2D lightCollider;
 
         [Inject] private GameplayManager gameplayManager;
+        [Inject] private PowerUpSettings powerUpSettings;
 
-        private float flashDuration = 10f;
-        private float flashIntensity = 3f; // todo ?
-        
         private float timer = 0f;
         private bool isFlashing = false;
 
@@ -30,7 +28,7 @@ namespace Gameplay.PowerUps
             if (!isFlashing) return;
 
             timer += Time.deltaTime;
-            if (timer >= flashDuration)
+            if (timer >= powerUpSettings.FlashDuration)
             {
                 ToggleFlash();
                 timer = 0f;
@@ -47,9 +45,19 @@ namespace Gameplay.PowerUps
         private void ToggleFlash()
         {
             isFlashing = !isFlashing;
-            lightCollider.radius = light2D.pointLightOuterRadius; 
-            lightCollider.gameObject.SetActive(true);
-            light2D.intensity = light2D.intensity == 0f ? flashIntensity : 0f;
+            var isFlashlightEnabled = light2D.intensity == 0f;
+            if (isFlashlightEnabled)
+            {
+                light2D.intensity = powerUpSettings.FlashIntensity;
+                lightCollider.radius = light2D.pointLightOuterRadius;
+                lightCollider.gameObject.SetActive(true);
+            }
+            else
+            {
+                light2D.intensity = 0f;
+                lightCollider.radius = 0f;
+                lightCollider.gameObject.SetActive(false);
+            }
         }
     }
 }
