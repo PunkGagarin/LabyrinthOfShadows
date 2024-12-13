@@ -10,6 +10,7 @@ public class PlayerWinDetector : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player won");
             _gameplayManager.SetLevelWon();
         }
     }

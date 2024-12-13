@@ -6,19 +6,20 @@ using Zenject;
 
 namespace Gameplay.Pathfinding
 {
-    public class GridManager : MonoBehaviour
+    public class GridManager : MonoBehaviour, IInitializable
     {
-        [Inject] private TilemapViewProvider _tilemapView;
+        [Inject] private LevelViewProvider _levelViewProvider;
 
         public Tilemap WalkableTilemap { get; private set; }
         public Tilemap ObstacleTilemap { get; private set; }
 
         private Dictionary<Vector2Int, TileNode> _nodes = new();
 
-        private void Awake()
+
+        public void Initialize()
         {
-            WalkableTilemap = _tilemapView.WalkableTilemap;
-            ObstacleTilemap = _tilemapView.ObstaclesTilemap;
+            WalkableTilemap = _levelViewProvider.TilemapViewProvider.WalkableTilemap;
+            ObstacleTilemap = _levelViewProvider.TilemapViewProvider.ObstaclesTilemap;
 
             //размер тайлмапы ?????
             BoundsInt bounds = WalkableTilemap.cellBounds;
@@ -34,7 +35,7 @@ namespace Gameplay.Pathfinding
 
         private void CreateTile(int x, int y)
         {
-            Vector3Int tilePos = new Vector3Int(x , y, 0);
+            Vector3Int tilePos = new Vector3Int(x, y, 0);
             if (WalkableTilemap.HasTile(tilePos))
             {
                 bool walkable = ObstacleTilemap == null || !ObstacleTilemap.HasTile(tilePos);
@@ -61,7 +62,7 @@ namespace Gameplay.Pathfinding
         {
             Vector2Int[] directions =
             {
-                Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right, 
+                Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right,
                 // new(1, 1), new(1, -1), new(-1, 1), new(-1, -1)
             };
             var neighbours = new List<TileNode>();
@@ -94,5 +95,6 @@ namespace Gameplay.Pathfinding
             var node = GetNode(playerPosition);
             return node.IsWalkable;
         }
+
     }
 }

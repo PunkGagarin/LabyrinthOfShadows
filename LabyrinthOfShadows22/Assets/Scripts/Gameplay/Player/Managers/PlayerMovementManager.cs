@@ -10,14 +10,14 @@ public class PlayerMovementManager : MonoBehaviour
     [Inject] private GameInputManager _gameInputManager;
     [Inject] private GameplayManager _gameplayManager;
     [Inject] private PlayerSettings _playerSettings;
-    [Inject] private LevelBoundsView _levelBoundsView;
-
+    [Inject] private LevelViewProvider _levelViewProvider;
 
     private float moveSpeed;
 
-    private void Awake()
+    private void Start()
     {
         moveSpeed = _playerSettings.MoveSpeed;
+        _playerView.transform.position = _levelViewProvider.PlayerSpawnPoint.position;
     }
 
     private void FixedUpdate()
@@ -49,13 +49,13 @@ public class PlayerMovementManager : MonoBehaviour
 
     private bool IsPositionInsideBounds(Vector2 position)
     {
-        return _levelBoundsView.LevelBounds.OverlapPoint(position);
+        return _levelViewProvider.LevelBoundsView.LevelBounds.OverlapPoint(position);
     }
 
     private Vector2 ClampPositionToBounds(Vector2 position)
     {
         // Находим ближайшую точку на коллайдере к позиции
-        var closestPoint = _levelBoundsView.LevelBounds.ClosestPoint(position);
+        var closestPoint = _levelViewProvider.LevelBoundsView.LevelBounds.ClosestPoint(position);
         return closestPoint;
     }
 }
