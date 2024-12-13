@@ -14,6 +14,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     private float moveSpeed;
 
+
     private void Start()
     {
         moveSpeed = _playerSettings.MoveSpeed;

@@ -10,7 +10,7 @@ public class CinfinerPolygonSetter : MonoBehaviour
     [Inject] private LevelViewProvider _levelViewProvider;
 
 
-    private void Awake()
+    private void Start()
     {
         var confiner = GetComponent<CinemachineConfiner2D>();
         confiner.m_BoundingShape2D = _levelViewProvider.LevelBoundsView.LevelBounds;

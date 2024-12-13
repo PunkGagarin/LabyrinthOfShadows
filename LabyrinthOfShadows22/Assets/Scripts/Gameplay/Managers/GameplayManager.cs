@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using System;
+using UI;
 using UnityEngine;
 using Zenject;
 
@@ -9,9 +10,20 @@ namespace Gameplay.Managers
         [Inject] private PauseUi pauseUi;
         [Inject] private LevelFailedUi levelFailedUi;
         [Inject] private LevelCompletedUI levelCompletedUi;
+        [Inject] private LevelViewProvider levelViewProvider;
 
         private bool _isPlaying = true;
         private bool _isPaused;
+
+        private void Start()
+        {
+            levelViewProvider.PlayerWinViewProvider.OnPlayerWinZoneEnter += SetLevelWon;
+        }
+
+        private void OnDestroy()
+        {
+            levelViewProvider.PlayerWinViewProvider.OnPlayerWinZoneEnter -= SetLevelWon;
+        }
 
         private void Update()
         {
