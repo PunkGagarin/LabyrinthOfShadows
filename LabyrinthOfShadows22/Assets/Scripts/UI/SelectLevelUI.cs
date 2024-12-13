@@ -1,18 +1,15 @@
-using SceneLoader;
+using UI.Core;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace UI
 {
-    public class SelectLevelUI : MonoBehaviour
+    public class SelectLevelUI : BaseUIObject
     {
         [SerializeField] private Button backButton;
         [SerializeField] private Button levelOne;
         [SerializeField] private Button levelTwo;
         [SerializeField] private Button levelThree;
-
-        [Inject] private Loader loader;
 
         private void Awake()
         {
@@ -32,7 +29,7 @@ namespace UI
 
         private void OnBackButtonClicked()
         {
-            loader.Load(Loader.Scene.MainMenuScene);
+            Hide();
         }
 
         private void OnLevelOneClicked()

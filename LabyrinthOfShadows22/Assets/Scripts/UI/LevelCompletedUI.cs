@@ -10,23 +10,22 @@ namespace UI
     {
         [SerializeField] private Button nextLevelButton;
         [SerializeField] private Button mainMenuButton;
-        [SerializeField] private Button selectLevelButton;
-        
+        [SerializeField] private Button restartLevelButton;
         
         [Inject] private Loader loader;
-        
+
         private void Awake()
         {
             nextLevelButton.onClick.AddListener(OnNextLevelClicked);
             mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
-            selectLevelButton.onClick.AddListener(OnSelectLevelButtonClicked);
+            restartLevelButton.onClick.AddListener(OnRestartLevelButtonClicked);
         }
 
         private void OnDestroy()
         {
             nextLevelButton.onClick.RemoveListener(OnNextLevelClicked);
             mainMenuButton.onClick.RemoveListener(OnMainMenuButtonClicked);
-            selectLevelButton.onClick.RemoveListener(OnSelectLevelButtonClicked);
+            restartLevelButton.onClick.RemoveListener(OnRestartLevelButtonClicked);
         }
 
         private void OnNextLevelClicked()
@@ -40,7 +39,7 @@ namespace UI
             loader.Load(Loader.Scene.MainMenuScene);
         }
 
-        private void OnSelectLevelButtonClicked()
+        private void OnRestartLevelButtonClicked()
         {
             loader.Load(Loader.Scene.GamePlayScene); //todo
         }
