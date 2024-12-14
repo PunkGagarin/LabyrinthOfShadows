@@ -1,3 +1,4 @@
+using Audio;
 using Gameplay.Managers;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -39,6 +40,7 @@ namespace Gameplay.PowerUps
         protected override void OnPickUp()
         {
             if (isFlashing) return;
+            soundManager.PlayOneShotByType(GameAudioType.PowerUpPickedUp, 0);
             ToggleFlash();
         }
 

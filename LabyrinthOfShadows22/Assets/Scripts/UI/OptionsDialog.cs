@@ -12,16 +12,9 @@ namespace UI
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider soundSlider;
         
-        private SoundManager soundManager;
-        private MusicManager musicManager;
-
-        [Inject]
-        void Init(SoundManager soundManager, MusicManager musicManager)
-        {
-            this.musicManager = musicManager;
-            this.soundManager = soundManager;
-        }
-
+        [Inject] private SoundManager soundManager;
+        [Inject] private MusicManager musicManager;
+        
         private void Awake()
         {
             closeButton.onClick.AddListener(OnCloseButtonClicked);

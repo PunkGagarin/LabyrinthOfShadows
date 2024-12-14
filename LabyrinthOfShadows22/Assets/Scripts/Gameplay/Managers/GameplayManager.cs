@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using Audio;
+using UI;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,7 @@ namespace Gameplay.Managers
         [Inject] private LevelCompletedUI levelCompletedUi;
         [Inject] private LevelViewProvider levelViewProvider;
         [Inject] private PlayStatManager _playStatManager;
+        [Inject] private MusicManager _musicManager;
 
         private bool _isPlaying = true;
         private bool _isPaused;
@@ -18,6 +20,7 @@ namespace Gameplay.Managers
         private void Start()
         {
             levelViewProvider.PlayerWinViewProvider.OnPlayerWinZoneEnter += SetLevelWon;
+            _musicManager.PlaySoundByType(GameAudioType.GameplayBgm, 0);
         }
 
         private void OnDestroy()

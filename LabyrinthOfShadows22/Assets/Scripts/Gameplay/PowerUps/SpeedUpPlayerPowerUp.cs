@@ -1,3 +1,4 @@
+using Audio;
 using Gameplay.Managers;
 using UnityEngine;
 using Zenject;
@@ -30,6 +31,7 @@ namespace Gameplay.PowerUps
         protected override void OnPickUp()
         {
             if (isPickedUp) return;
+            soundManager.PlayOneShotByType(GameAudioType.PowerUpPickedUp, 0);
             playerMovementManager.IncreasePlayerSpeed(powerUpSettings.SpeedUpStrength);
             isPickedUp = true;
         }

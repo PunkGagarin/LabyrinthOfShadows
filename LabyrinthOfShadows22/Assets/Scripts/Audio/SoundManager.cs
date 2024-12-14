@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Audio
 {
@@ -10,6 +9,7 @@ namespace Audio
         private const float DEFAULT_VOLUME = 1f;
 
         [SerializeField] private SoundsFactorySO soundsFactory;
+        [SerializeField] private AudioSource audioSource;
 
         private void Awake()
         {
@@ -44,6 +44,16 @@ namespace Audio
         {
             var soundToPlay = soundsFactory.GetClipByTypeAndIndex(type, soundIndex);
             PlaySound(soundToPlay, position);
+        }
+        
+        public void PlayOneShotByType(GameAudioType type, int soundIndex)
+        {
+            var soundToPlay = soundsFactory.GetClipByTypeAndIndex(type, soundIndex);
+            audioSource.clip = soundToPlay;
+            audioSource.volume = DEFAULT_VOLUME * Volume;
+            audioSource.panStereo = 0.0f;
+            audioSource.spatialBlend = 0.0f;
+            audioSource.Play();
         }
 
         private void PlaySound(AudioClip clip, Vector3 position, float volumeMultiplier = DEFAULT_VOLUME)

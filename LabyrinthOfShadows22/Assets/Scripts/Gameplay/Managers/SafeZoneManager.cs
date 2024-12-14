@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
+using Zenject;
 
 public class SafeZoneManager : MonoBehaviour
 {
     private List<SafeZoneView> _safeZones =  new();
+    
+    [Inject] private SoundManager _soundManager;
 
     public bool IsPlayerInSafeZone { get; private set; }
 
@@ -18,6 +22,7 @@ public class SafeZoneManager : MonoBehaviour
     private void SetIsPlayerInSafeZoneToTrue()
     {
         Debug.Log("Player in safe zone");
+        _soundManager.PlayOneShotByType(GameAudioType.SafeZoneEnter, 0);
         IsPlayerInSafeZone = true;
     }
 

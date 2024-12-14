@@ -1,3 +1,4 @@
+using Audio;
 using Gameplay.Managers;
 using SceneLoader;
 using TMPro;
@@ -17,12 +18,14 @@ namespace UI
 
         [Inject] private Loader loader;
         [Inject] private PlayStatManager _playStatManager;
+        [Inject] private MusicManager _musicManager;
 
         private void Awake()
         {
             startGameButton.onClick.AddListener(OnStartGameClicked);
             optionsButton.onClick.AddListener(OnOptionsClicked);
             selectLevelButton.onClick.AddListener(OnSelectLevelClicked);
+            _musicManager.PlaySoundByType(GameAudioType.MainMenuBgm, 0);
         }
 
         private void Start()
