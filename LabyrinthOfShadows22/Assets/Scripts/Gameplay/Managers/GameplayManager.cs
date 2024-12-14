@@ -1,5 +1,4 @@
-﻿using System;
-using UI;
+﻿using UI;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +10,7 @@ namespace Gameplay.Managers
         [Inject] private LevelFailedUi levelFailedUi;
         [Inject] private LevelCompletedUI levelCompletedUi;
         [Inject] private LevelViewProvider levelViewProvider;
+        [Inject] private PlayStatManager _playStatManager;
 
         private bool _isPlaying = true;
         private bool _isPaused;
@@ -58,6 +58,7 @@ namespace Gameplay.Managers
         {
             _isPlaying = false;
             levelCompletedUi.Show();
+            _playStatManager.UpdateLastCompletedLevel();
         }
 
         public void SetGameOver()

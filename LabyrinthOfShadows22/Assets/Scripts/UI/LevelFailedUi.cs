@@ -27,7 +27,6 @@ namespace UI
 
         private void OnRestartClicked()
         {
-            // todo reopen current level
             loader.Load(Loader.Scene.GamePlayScene);
         }
 

@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using SceneLoader;
 using UI.Core;
 using UnityEngine;
@@ -11,8 +12,9 @@ namespace UI
         [SerializeField] private Button nextLevelButton;
         [SerializeField] private Button mainMenuButton;
         [SerializeField] private Button restartLevelButton;
-        
+
         [Inject] private Loader loader;
+        [Inject] private PlayStatManager playStatManager;
 
         private void Awake()
         {
@@ -30,7 +32,7 @@ namespace UI
 
         private void OnNextLevelClicked()
         {
-            // todo open next level
+            playStatManager.OnPlayStarting();
             loader.Load(Loader.Scene.GamePlayScene);
         }
 
@@ -41,7 +43,7 @@ namespace UI
 
         private void OnRestartLevelButtonClicked()
         {
-            loader.Load(Loader.Scene.GamePlayScene); //todo
+            loader.Load(Loader.Scene.GamePlayScene);
         }
     }
 }

@@ -16,5 +16,7 @@ namespace Gameplay.Settings
         {
             return  _levels.FirstOrDefault(el => el.key == levelIndex)?.value;
         }
+
+        public int LevelsCount => _levels.Count;
     }
 }

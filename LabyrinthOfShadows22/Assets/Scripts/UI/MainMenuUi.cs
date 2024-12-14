@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using SceneLoader;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace UI
         [SerializeField] private SelectLevelUI selectLevelUI;
 
         [Inject] private Loader loader;
+        [Inject] private PlayStatManager _playStatManager;
 
         private void Awake()
         {
@@ -31,15 +33,14 @@ namespace UI
 
         private void SetStartGameButtonText()
         {
-            var IsAtLeastOneLevelCompleted = false; // todo check settings
+            var IsAtLeastOneLevelCompleted = _playStatManager.IsGamePlayed();
             startGameButton.GetComponentInChildren<TextMeshProUGUI>().text =
                 IsAtLeastOneLevelCompleted ? "Continue Game" : "Start Game";
         }
-
-
+        
         private void CheckSelectLevelButtonVisibility()
         {
-            var allLevelsCompleted = true; // todo check settings
+            var allLevelsCompleted = false; // todo _playStatManager.IsAllLevelsCompleted();
             selectLevelButton.gameObject.SetActive(allLevelsCompleted);
         }
 
@@ -50,6 +51,7 @@ namespace UI
 
         private void OnStartGameClicked()
         {
+            _playStatManager.OnPlayStarting();
             loader.Load(Loader.Scene.GamePlayScene);
         }
 
