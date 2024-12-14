@@ -1534,7 +1534,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1993,6 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa586e87bbcf44bcd80c6d94efad334f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content: {fileID: 0}
   backButton: {fileID: 1163228231}
   levelOne: {fileID: 480082573}
   levelTwo: {fileID: 713481270}
@@ -2997,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cb023e754340c4a89d0cff71b1536a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLevelIndex: 3
+  _defaultLevelIndex: 1
   _levelRepository: {fileID: 11400000, guid: 43a463a6d1551cc42ae006b797bfac1b, type: 2}
   _levelHolder: {fileID: 266774975}
 --- !u!1 &1294645772
@@ -4105,7 +4106,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1299985691}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 3
+    OrthographicSize: 4.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4796,17 +4797,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5368018682872845903, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7038921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368018682872845903, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368018682872845903, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368018682872845903, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.71030694
+      objectReference: {fileID: 0}
     - target: {fileID: 8555961128593279252, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
       propertyPath: m_Intensity
       value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8555961128593279252, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 30.940899
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555961128593279252, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 54.3309
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555961128593279252, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 2.2
+      value: 2.2195823
       objectReference: {fileID: 0}
     - target: {fileID: 8555961128593279252, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 4.58
+      value: 5.3687453
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

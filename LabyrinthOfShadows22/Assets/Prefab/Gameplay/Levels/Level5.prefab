@@ -232,6 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerSpawnPoint>k__BackingField: {fileID: 0}
+  <LevelBoundsView>k__BackingField: {fileID: 0}
+  <TilemapViewProvider>k__BackingField: {fileID: 4551062791620174870, guid: f95e0e3163718804086ce4e98f160787, type: 3}
+  <PlayerWinViewProvider>k__BackingField: {fileID: 0}
 --- !u!1 &1218763086452518297
 GameObject:
   m_ObjectHideFlags: 0

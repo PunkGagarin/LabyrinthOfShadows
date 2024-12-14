@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SpeedUpDuration>k__BackingField: 3
   <SpeedUpStrength>k__BackingField: 3
-  <FlashDuration>k__BackingField: 10
-  <FlashIntensity>k__BackingField: 3
+  <FlashDuration>k__BackingField: 2
+  <FlashIntensity>k__BackingField: 2

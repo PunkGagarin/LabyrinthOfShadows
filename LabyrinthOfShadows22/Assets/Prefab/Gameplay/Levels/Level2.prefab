@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerSpawnPoint>k__BackingField: {fileID: 6168445420470605398}
   <LevelBoundsView>k__BackingField: {fileID: 381728678479383760}
-  <TilemapViewProvider>k__BackingField: {fileID: 340330930908755819}
+  <TilemapViewProvider>k__BackingField: {fileID: 4551062791620174870, guid: 3a34444e6246f834493d73e8ae7a467c, type: 3}
   <PlayerWinViewProvider>k__BackingField: {fileID: 8575697869931612560}
 --- !u!1 &1218763086452518297
 GameObject:
@@ -1261,17 +1261,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aea22fcca05706545be60ca28a581158, type: 3}
---- !u!114 &340330930908755819 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4551062791620174870, guid: aea22fcca05706545be60ca28a581158, type: 3}
-  m_PrefabInstance: {fileID: 4292359609422730109}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a8ebdd7879ce5429a65cb9f69440eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6879454623152068535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7271411059519751370, guid: aea22fcca05706545be60ca28a581158, type: 3}
