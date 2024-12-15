@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: d47889c35ccbf5747ae72daacff9e9c4
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: mob_eyeless-Recovered_Clip
+    second: {fileID: 7400000, guid: 87d7bea1ec37148aeb8a01fc9783a607, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -97,7 +102,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638698710099050572
+  platformSettingsDirtyTick: 638698830208605290
   textureAssetName: 
   singleSpriteImportData:
   - name: 

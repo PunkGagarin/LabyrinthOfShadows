@@ -92,6 +92,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4392867081176238120, guid: 290faad29db71384488eced9cb69635f, type: 3}
+      propertyPath: visual
+      value: 
+      objectReference: {fileID: 5857122710481756481}
     - target: {fileID: 5329158001447192622, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -107,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 5700923548289106207, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 5710490159983530482, guid: ac096b926598c6f438415d60f5efa4dc, type: 3}
+      objectReference: {fileID: 9100000, guid: 3cdbaa6e7cb224ba091a14713bf9b51e, type: 2}
     - target: {fileID: 6388137991239815075, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3
@@ -237,3 +241,8 @@ MonoBehaviour:
   _moveSpeed: 1
   _type: 1
   _zoneDetector: {fileID: 0}
+--- !u!1 &5857122710481756481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1845067958814462159, guid: 290faad29db71384488eced9cb69635f, type: 3}
+  m_PrefabInstance: {fileID: 5247346241124446606}
+  m_PrefabAsset: {fileID: 0}

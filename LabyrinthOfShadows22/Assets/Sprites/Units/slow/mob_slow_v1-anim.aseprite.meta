@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: ac096b926598c6f438415d60f5efa4dc
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: mob_slow_v1-anim_Clip
+    second: {fileID: 7400000, guid: 80497571e5b654ff3b818f095aefbbcd, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -97,7 +102,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638698710163787253
+  platformSettingsDirtyTick: 638698834464291650
   textureAssetName: 
   singleSpriteImportData:
   - name: 

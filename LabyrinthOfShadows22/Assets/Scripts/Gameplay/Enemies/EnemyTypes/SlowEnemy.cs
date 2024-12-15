@@ -5,7 +5,6 @@ namespace Gameplay.Enemies
     //todo: remake this class
     public class SlowEnemy : Enemy
     {
-        
         protected override void Update()
         {
             if (!_gameplayManager.IsGamePlaying())
@@ -14,7 +13,7 @@ namespace Gameplay.Enemies
             SearchPathToPlayerWithDealy();
             MoveToNextPoint();
         }
-        
+
         protected override void Awake()
         {
             _currentCell = _currentCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
