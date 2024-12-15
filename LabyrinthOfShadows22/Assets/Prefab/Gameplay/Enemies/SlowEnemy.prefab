@@ -216,6 +216,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -1069429264798007125}
   m_SourcePrefab: {fileID: 100100000, guid: 290faad29db71384488eced9cb69635f, type: 3}
+--- !u!212 &82939930237794720 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5329158001447192622, guid: 290faad29db71384488eced9cb69635f, type: 3}
+  m_PrefabInstance: {fileID: 5247346241124446606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &126884100963169829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5264877221242849195, guid: 290faad29db71384488eced9cb69635f, type: 3}
@@ -240,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 1
   _type: 1
+  _visual: {fileID: 82939930237794720}
   _animationSwitcher: {fileID: 7809837844033356722}
   _zoneDetector: {fileID: 0}
 --- !u!1 &5857122710481756481 stripped

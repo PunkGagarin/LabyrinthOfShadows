@@ -123,8 +123,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 2
   _type: 3
+  _visual: {fileID: 2747275103236051902}
   _animationSwitcher: {fileID: 5432747906147740076}
   _patrolWayPoints: []
+--- !u!212 &2747275103236051902 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5329158001447192622, guid: 290faad29db71384488eced9cb69635f, type: 3}
+  m_PrefabInstance: {fileID: 8058260045111499664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5432747906147740076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2643700662029185596, guid: 290faad29db71384488eced9cb69635f, type: 3}
