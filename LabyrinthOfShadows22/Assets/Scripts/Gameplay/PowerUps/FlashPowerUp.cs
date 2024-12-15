@@ -17,10 +17,10 @@ namespace Gameplay.PowerUps
         private float timer = 0f;
         private bool isFlashing = false;
 
-        private void Start()
-        {
-            light2D.intensity = 0f;
-        }
+        // private void Start()
+        // {
+        //     light2D.intensity = 0f;
+        // }
 
         private void Update()
         {
@@ -46,19 +46,21 @@ namespace Gameplay.PowerUps
 
         private void ToggleFlash()
         {
-            isFlashing = !isFlashing;
-            var isFlashlightEnabled = light2D.intensity == 0f;
-            if (isFlashlightEnabled)
+            isFlashing = true;
+            // var isFlashlightEnabled = light2D.intensity == 0f;
+            if (isFlashing)
             {
+                light2D.gameObject.SetActive(true);
                 light2D.intensity = powerUpSettings.FlashIntensity;
                 lightCollider.radius = light2D.pointLightOuterRadius;
                 lightCollider.gameObject.SetActive(true);
             }
             else
             {
-                light2D.intensity = 0f;
-                lightCollider.radius = 0f;
-                lightCollider.gameObject.SetActive(false);
+                // light2D.intensity = 0f;
+                // lightCollider.radius = 0f;
+                // lightCollider.gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }
