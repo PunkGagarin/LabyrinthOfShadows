@@ -11,6 +11,9 @@ public class PlayerView : MonoBehaviour
     public Light2D ConusLight { get; private set; }
     
     [field: SerializeField]
+    public Light2D CircleLight { get; private set; }
+    
+    [field: SerializeField]
     public PolygonCollider2D ConusLightCollider { get; private set; }
 
 }

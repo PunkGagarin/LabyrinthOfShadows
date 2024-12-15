@@ -7,7 +7,8 @@ namespace Gameplay.Player.Managers
 {
     public class PlayerLightManager : MonoBehaviour
     {
-        [SerializeField] private PlayerView playerView;
+        [SerializeField]
+        private PlayerView playerView;
 
         [Inject] private PlayerSettings playerSettings;
         [Inject] private GameplayManager gameplayManager;
@@ -60,6 +61,7 @@ namespace Gameplay.Player.Managers
         public void ResetLightLevel()
         {
             playerView.ConusLight.pointLightOuterRadius = playerSettings.MaxLightRadius;
+            playerView.ConusLight.pointLightOuterRadius = 0.73f;
             UpdateCollider(playerSettings.MaxLightRadius);
         }
 
@@ -69,7 +71,10 @@ namespace Gameplay.Player.Managers
 
             float nextValue = playerView.ConusLight.pointLightOuterRadius - playerSettings.LightRadiusDecreasePerSecond;
             if (nextValue <= playerSettings.MinLightRadius)
+            {
                 nextValue = playerSettings.MinLightRadius;
+                playerView.ConusLight.pointLightOuterRadius = 0.1f;
+            }
 
             playerView.ConusLight.pointLightOuterRadius = nextValue;
             UpdateCollider(nextValue);
@@ -81,7 +86,10 @@ namespace Gameplay.Player.Managers
 
             float nextValue = playerView.ConusLight.pointLightOuterRadius + playerSettings.LightRadiusIncreasePerSecond;
             if (nextValue >= playerSettings.MaxLightRadius)
+            {
                 nextValue = playerSettings.MaxLightRadius;
+                playerView.ConusLight.pointLightOuterRadius = 0.73f;
+            }
 
             playerView.ConusLight.pointLightOuterRadius = nextValue;
             UpdateCollider(nextValue);

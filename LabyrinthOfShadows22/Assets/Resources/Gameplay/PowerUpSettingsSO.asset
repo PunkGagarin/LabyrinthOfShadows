@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PowerUpSettingsSO
   m_EditorClassIdentifier: 
   <SpeedUpDuration>k__BackingField: 3
-  <SpeedUpStrength>k__BackingField: 3
-  <FlashDuration>k__BackingField: 2
+  <SpeedUpStrength>k__BackingField: 5
+  <FlashDuration>k__BackingField: 5
   <FlashIntensity>k__BackingField: 2

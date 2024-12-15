@@ -12,7 +12,7 @@ namespace UI
     {
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button optionsButton;
-        [SerializeField] private Button selectLevelButton;
+        // [SerializeField] private Button selectLevelButton;
         [SerializeField] private OptionsDialog optionsDialog;
         [SerializeField] private SelectLevelUI selectLevelUI;
         [SerializeField] private Button resetProgressButton;
@@ -25,7 +25,7 @@ namespace UI
         {
             startGameButton.onClick.AddListener(OnStartGameClicked);
             optionsButton.onClick.AddListener(OnOptionsClicked);
-            selectLevelButton.onClick.AddListener(OnSelectLevelClicked);
+            // selectLevelButton.onClick.AddListener(OnSelectLevelClicked);
             resetProgressButton.onClick.AddListener(ResetProgress);
             _musicManager.PlaySoundByType(GameAudioType.MainMenuBgm, 0);
         }
@@ -51,7 +51,7 @@ namespace UI
         private void CheckSelectLevelButtonVisibility()
         {
             var allLevelsCompleted = false; // todo _playStatManager.IsAllLevelsCompleted();
-            selectLevelButton.gameObject.SetActive(allLevelsCompleted);
+            // selectLevelButton.gameObject.SetActive(allLevelsCompleted);
         }
 
         private void OnOptionsClicked()
@@ -74,7 +74,7 @@ namespace UI
         {
             startGameButton.onClick.RemoveListener(OnStartGameClicked);
             optionsButton.onClick.RemoveListener(OnOptionsClicked);
-            selectLevelButton.onClick.RemoveListener(OnSelectLevelClicked);
+            // selectLevelButton.onClick.RemoveListener(OnSelectLevelClicked);
             resetProgressButton.onClick.RemoveListener(ResetProgress);
         }
     }
