@@ -49,6 +49,8 @@ namespace Gameplay.Enemies
 
                 transform.position = Vector3.MoveTowards(transform.position,
                     worldPos, _moveSpeed * Time.deltaTime);
+                
+                //todo: insert flip here depends on direction
 
                 if (Vector3.Distance(transform.position, worldPos) < 0.01f)
                     ReachPointLogic();
