@@ -11,6 +11,7 @@ namespace Gameplay.Managers
         
         private const int DEAFULT_LEVEL_INDEX = -1;
         private const String LAST_COMPLETED_LEVEL = "LastCompletedLevel";
+        private const String TUTORIAL_SHOWN = "TutorialShown";
 
         public int CurrentLevelIndex { get; private set; }
 
@@ -34,6 +35,10 @@ namespace Gameplay.Managers
         {
             SetLastCompletedLevel(CurrentLevelIndex);
         }
+        
+        public bool ShouldShowTutorial() => !PlayerPrefs.HasKey(TUTORIAL_SHOWN);
+        
+        public void OnTutorialShown() => PlayerPrefs.SetInt(TUTORIAL_SHOWN, 1);
 
         private int GetLastCompletedLevel()
         {

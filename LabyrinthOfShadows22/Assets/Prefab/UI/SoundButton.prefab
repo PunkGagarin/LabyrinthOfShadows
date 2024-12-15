@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: 27}
+  m_AnchoredPosition: {x: -5, y: -0}
   m_SizeDelta: {x: 299.19, y: 56.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6637649989422400536
@@ -65,10 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Restart level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bf1e056c70bc94c66bceca73f01b89a7, type: 2}
-  m_sharedMaterial: {fileID: -2666792166244706684, guid: bf1e056c70bc94c66bceca73f01b89a7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0cc839ed4f6c84932993f9df70447456, type: 2}
+  m_sharedMaterial: {fileID: 6632447400236772578, guid: 0cc839ed4f6c84932993f9df70447456, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 132.6
-  m_fontSizeBase: 132.6
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -108,17 +108,15 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 0
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
-  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -163,7 +161,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6748167527658431343}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -173,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.11255, y: -174.25885}
-  m_SizeDelta: {x: 746.7676, y: 154.5688}
+  m_AnchoredPosition: {x: 33.11255, y: -199.57324}
+  m_SizeDelta: {x: 746.7676, y: 103.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5602981101940955628
 CanvasRenderer:
@@ -204,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2802904198054408972, guid: 08347a8e770314d599cdcd99db8f9fde, type: 3}
+  m_Sprite: {fileID: 395935397292142461, guid: b458b3a895c0e4695a4c90683dc89860, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -270,5 +268,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca05faa6cd0a463a898ec397b092670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  context: {fileID: 0}
-  button: {fileID: 0}

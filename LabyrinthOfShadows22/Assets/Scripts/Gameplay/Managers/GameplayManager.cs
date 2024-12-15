@@ -69,6 +69,17 @@ namespace Gameplay.Managers
             _isPlaying = false;
             levelFailedUi.Show();
         }
+
+        public void OnTutorialShowing()
+        {
+            _isPlaying = false;
+        }
+
+        public void OnTutorialShown()
+        {
+            _playStatManager.OnTutorialShown();
+            _isPlaying = true;   
+        }
     }
 
     public enum GameState
