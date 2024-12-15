@@ -6,7 +6,7 @@ namespace Audio
     {
 
         private const string PLAYER_PREFS_NAME = "MusicVolume";
-        private const float DEFAULT_VOLUME = .3f;
+        private const float DEFAULT_VOLUME = .5f;
 
         [SerializeField] private SoundsFactorySO soundsFactory;
         private AudioSource audioSource;

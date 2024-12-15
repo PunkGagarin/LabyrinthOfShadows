@@ -6,7 +6,7 @@ namespace Audio
     public class SoundManager : BaseAudioManager, ISoundManager
     {
         private const string PLAYER_PREFS_NAME = "SoundEffectVolume";
-        private const float DEFAULT_VOLUME = 1f;
+        private const float DEFAULT_VOLUME = .5f;
 
         [SerializeField] private SoundsFactorySO soundsFactory;
         [SerializeField] private AudioSource audioSource;
