@@ -3601,7 +3601,7 @@ MonoBehaviour:
   _defaultLevelIndex: 0
   _levelRepository: {fileID: 11400000, guid: 43a463a6d1551cc42ae006b797bfac1b, type: 2}
   _levelHolder: {fileID: 266774975}
-  isDebug: 0
+  isDebug: 1
 --- !u!1 &1271004487
 GameObject:
   m_ObjectHideFlags: 0
