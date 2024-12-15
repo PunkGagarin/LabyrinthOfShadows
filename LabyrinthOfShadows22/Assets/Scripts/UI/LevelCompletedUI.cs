@@ -1,5 +1,6 @@
 using Gameplay.Managers;
 using SceneLoader;
+using TMPro;
 using UI.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace UI
         [SerializeField] private Button nextLevelButton;
         [SerializeField] private Button mainMenuButton;
         [SerializeField] private Button restartLevelButton;
+        [SerializeField] private TextMeshProUGUI title;
 
         [Inject] private Loader loader;
         [Inject] private PlayStatManager playStatManager;
@@ -21,6 +23,13 @@ namespace UI
             nextLevelButton.onClick.AddListener(OnNextLevelClicked);
             mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
             restartLevelButton.onClick.AddListener(OnRestartLevelButtonClicked);
+        }
+
+        private void Start()
+        {
+            if (!playStatManager.IsThisLevelLast()) return;
+            title.text = "Thanks for playing!";
+            nextLevelButton.gameObject.SetActive(false);
         }
 
         private void OnDestroy()
