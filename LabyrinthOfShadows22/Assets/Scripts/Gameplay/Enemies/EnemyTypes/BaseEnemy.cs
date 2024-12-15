@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Gameplay.Managers;
 using Gameplay.Pathfinding;
 using UnityEngine;
@@ -9,19 +8,18 @@ namespace Gameplay.Enemies
 {
     public class BaseEnemy : MonoBehaviour
     {
-
-        [SerializeField]
-        protected float _moveSpeed;
+        [SerializeField] protected float _moveSpeed;
         //
         // [SerializeField]
         // protected Transform _spawnPoint;
 
-        [SerializeField]
-        protected EnemyType _type;
+        [SerializeField] protected EnemyType _type;
 
         [Inject] protected GridManager _gridManager;
         [Inject] protected Pathfinder _pathfinder;
         [Inject] protected GameplayManager _gameplayManager;
+
+        protected EnemyAnimationSwitcher _animationSwitcher;
 
         protected Vector2Int _currentCell;
         protected Vector2Int _spawnPointCell;
@@ -32,6 +30,7 @@ namespace Gameplay.Enemies
         {
             _currentCell = _currentCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
             _spawnPointCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+            _animationSwitcher = GetComponent<EnemyAnimationSwitcher>();
         }
 
         protected virtual void Update()
@@ -44,6 +43,7 @@ namespace Gameplay.Enemies
         {
             if (CanMove())
             {
+                _animationSwitcher.SwitchAnimationToRun();
                 Vector3 worldPos = _gridManager.WalkableTilemap.CellToWorld(new Vector3Int(_path[_pathIndex].x,
                     _path[_pathIndex].y, 0)) + _gridManager.WalkableTilemap.cellSize * 0.5f;
 
@@ -54,6 +54,10 @@ namespace Gameplay.Enemies
 
                 if (Vector3.Distance(transform.position, worldPos) < 0.01f)
                     ReachPointLogic();
+            }
+            else
+            {
+                _animationSwitcher.SwitchAnimationToIdle();
             }
         }
 

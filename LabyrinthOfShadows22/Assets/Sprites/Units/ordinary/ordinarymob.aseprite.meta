@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: f1f3a3edcfd1f9e419bdb9b01011e7a6
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: ordinarymob_Clip
+    second: {fileID: 7400000, guid: fd5bbf9369c5e41098d7f71a92cb6058, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -97,7 +102,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638698685705057689
+  platformSettingsDirtyTick: 638698782561355280
   textureAssetName: 
   singleSpriteImportData:
   - name: 
