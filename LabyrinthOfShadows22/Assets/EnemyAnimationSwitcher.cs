@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemyAnimationSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject visual;
+    // [SerializeField] private GameObject visual;
     private Animator animator;
 
     private void Awake()
     {
-        animator = visual.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()

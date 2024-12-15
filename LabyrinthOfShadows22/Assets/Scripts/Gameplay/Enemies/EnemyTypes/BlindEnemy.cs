@@ -14,7 +14,6 @@ namespace Gameplay.Enemies
 
         protected void Start()
         {
-            
             //лютый костыль чтобы не разбираться с порядком вызова
             StartCoroutine(BuildPathFromWayPointsAndSelf());
         }
@@ -23,7 +22,7 @@ namespace Gameplay.Enemies
         {
             yield return new WaitForSeconds(0.5f);
             _path = new List<Vector2Int>();
-            
+
             _path.Add(_currentCell);
             foreach (var wayPoint in _patrolWayPoints)
             {
@@ -34,17 +33,18 @@ namespace Gameplay.Enemies
 
         protected override void Update()
         {
-            base.Update();
+            if (!_gameplayManager.IsGamePlaying())
+                return;
+
             MoveToNextPoint();
         }
 
         protected override void ReachPointLogic()
         {
             base.ReachPointLogic();
-            
+
             if (HasReachFinalPoint())
                 RevertPath();
-            
         }
 
         private bool HasReachFinalPoint()

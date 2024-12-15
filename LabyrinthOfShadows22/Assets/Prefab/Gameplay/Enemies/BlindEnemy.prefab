@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1106120474892178415, guid: 290faad29db71384488eced9cb69635f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8bb66a33f80534323819a02972bda745, type: 2}
     - target: {fileID: 4392867081176238120, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: visual
       value: 
@@ -119,7 +123,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 2
   _type: 3
+  _animationSwitcher: {fileID: 5432747906147740076}
   _patrolWayPoints: []
+--- !u!114 &5432747906147740076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2643700662029185596, guid: 290faad29db71384488eced9cb69635f, type: 3}
+  m_PrefabInstance: {fileID: 8058260045111499664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524838390058666847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980f0a292b80d43828040592be6a0217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8524838390058666847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1845067958814462159, guid: 290faad29db71384488eced9cb69635f, type: 3}

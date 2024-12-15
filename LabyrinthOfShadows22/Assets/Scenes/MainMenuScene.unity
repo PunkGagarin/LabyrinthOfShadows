@@ -474,7 +474,7 @@ RectTransform:
   - {fileID: 551300466}
   - {fileID: 1289596442}
   - {fileID: 1843133011}
-  - {fileID: 1345444828}
+  - {fileID: 1572774613}
   - {fileID: 524388787}
   m_Father: {fileID: 355342216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -497,9 +497,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 1289596444}
   optionsButton: {fileID: 1843133012}
-  selectLevelButton: {fileID: 1345444830}
+  selectLevelButton: {fileID: 0}
   optionsDialog: {fileID: 1307155709}
   selectLevelUI: {fileID: 134736461}
+  resetProgressButton: {fileID: 1572774614}
 --- !u!1 &355342211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,22 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f18584cae3f42aaa473ec98ede74ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1345444828 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
-  m_PrefabInstance: {fileID: 1443594837}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1345444830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4904218830492920862, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
-  m_PrefabInstance: {fileID: 1443594837}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1376537880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1372,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1443594837
+--- !u!1001 &1572774612
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1421,11 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 746.7676
+      value: 306.1666
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 116
+      value: 58.6292
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1457,11 +1442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -417
+      value: -390
       objectReference: {fileID: 0}
     - target: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1476,20 +1461,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1573855616152171808, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -87.9161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573855616152171808, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -19.5296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573855616152171808, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: -4.9999847
       objectReference: {fileID: 0}
     - target: {fileID: 1573855616152171808, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_text
-      value: Select level
+      value: Reset
       objectReference: {fileID: 0}
     - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_fontSize
-      value: 65
+      value: 56.45
       objectReference: {fileID: 0}
     - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_fontAsset
@@ -1504,26 +1497,38 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6632447400236772578, guid: 0cc839ed4f6c84932993f9df70447456, type: 2}
     - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278610992071824510, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4550496913706225274, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6748167527658431343, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
       propertyPath: m_Name
-      value: SelectLevelButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6748167527658431343, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: ResetProgressButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+--- !u!224 &1572774613 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1192770425217221001, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+  m_PrefabInstance: {fileID: 1572774612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1572774614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4904218830492920862, guid: 2ddf46843f9c947e8a637ecaa3747201, type: 3}
+  m_PrefabInstance: {fileID: 1572774612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1637991734
 PrefabInstance:
   m_ObjectHideFlags: 0
