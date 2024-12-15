@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using SceneLoader;
 using UI.Core;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace UI
         [SerializeField] private Button mainMenuButton;
 
         [Inject] private Loader loader;
+        [Inject] private PlayStatManager playStatManager;
 
         private void Awake()
         {
@@ -32,6 +34,7 @@ namespace UI
 
         private void OnMainMenuButtonClicked()
         {
+            playStatManager.DowngradeLevel();
             loader.Load(Loader.Scene.MainMenuScene);
         }
     }
