@@ -52,6 +52,8 @@ namespace Gameplay.Enemies
         {
             base.Update();
 
+            if (!_gameplayManager.IsGamePlaying()) return;
+
             if (_isChasingPlayer)
                 SearchPathToPlayerWithDealy();
 
