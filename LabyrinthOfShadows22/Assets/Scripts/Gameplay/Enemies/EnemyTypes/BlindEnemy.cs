@@ -31,6 +31,11 @@ namespace Gameplay.Enemies
             }
         }
 
+        protected override void TryFlip(Vector3 worldPos)
+        {
+            _visual.flipX = worldPos.x > transform.position.x;
+        }
+
         protected override void Update()
         {
             if (!_gameplayManager.IsGamePlaying())

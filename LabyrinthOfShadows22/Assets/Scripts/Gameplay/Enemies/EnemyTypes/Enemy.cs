@@ -7,7 +7,6 @@ namespace Gameplay.Enemies
 {
     public class Enemy : BaseEnemy, IStoppable
     {
-        [Inject] private PlayerView _playerView;
         [Inject] private SafeZoneManager _safeZoneManager;
 
         [SerializeField]
@@ -46,7 +45,6 @@ namespace Gameplay.Enemies
             _isChasingPlayer = false;
             FindPathTo(_spawnPointCell);
         }
-
 
         protected override void Update()
         {
