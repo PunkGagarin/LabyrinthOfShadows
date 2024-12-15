@@ -93,6 +93,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5329158001447192622, guid: 290faad29db71384488eced9cb69635f, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329158001447192622, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5339586197172385175, guid: f1f3a3edcfd1f9e419bdb9b01011e7a6, type: 3}
@@ -138,15 +142,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_ConstrainProportionsScale
