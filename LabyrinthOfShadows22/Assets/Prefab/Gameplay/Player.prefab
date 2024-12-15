@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Rigidbody2D>k__BackingField: {fileID: 6401377909177162688}
   <ConusLight>k__BackingField: {fileID: 8555961128593279252}
+  <CircleLight>k__BackingField: {fileID: 2134028749317029168}
   <ConusLightCollider>k__BackingField: {fileID: 899421993961561499}
 --- !u!1 &3520353445604343026
 GameObject:
@@ -227,7 +228,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -327,7 +328,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.507
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -348,10 +349,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 357.14
+  m_PointLightInnerAngle: 358.76
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.33
-  m_PointLightOuterRadius: 0.73
+  m_PointLightInnerRadius: 0.36
+  m_PointLightOuterRadius: 0.8126235
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -482,7 +483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7390566100866237200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.71030694, w: 0.7038921}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -525,10 +526,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 32.68
-  m_PointLightOuterAngle: 56.07
-  m_PointLightInnerRadius: 2.2
-  m_PointLightOuterRadius: 4.58
+  m_PointLightInnerAngle: 30.940899
+  m_PointLightOuterAngle: 54.3309
+  m_PointLightInnerRadius: 2.2195823
+  m_PointLightOuterRadius: 5.3687453
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

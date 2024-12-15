@@ -10,12 +10,21 @@ namespace UI
 {
     public class MainMenuUi : MonoBehaviour
     {
-        [SerializeField] private Button startGameButton;
-        [SerializeField] private Button optionsButton;
+        [SerializeField]
+        private Button startGameButton;
+
+        [SerializeField]
+        private Button optionsButton;
+
         // [SerializeField] private Button selectLevelButton;
-        [SerializeField] private OptionsDialog optionsDialog;
-        [SerializeField] private SelectLevelUI selectLevelUI;
-        [SerializeField] private Button resetProgressButton;
+        [SerializeField]
+        private OptionsDialog optionsDialog;
+
+        [SerializeField]
+        private SelectLevelUI selectLevelUI;
+
+        [SerializeField]
+        private Button resetProgressButton;
 
         [Inject] private Loader loader;
         [Inject] private PlayStatManager _playStatManager;
@@ -25,7 +34,6 @@ namespace UI
         {
             startGameButton.onClick.AddListener(OnStartGameClicked);
             optionsButton.onClick.AddListener(OnOptionsClicked);
-            // selectLevelButton.onClick.AddListener(OnSelectLevelClicked);
             resetProgressButton.onClick.AddListener(ResetProgress);
             _musicManager.PlaySoundByType(GameAudioType.MainMenuBgm, 0);
         }
@@ -39,6 +47,7 @@ namespace UI
         private void ResetProgress()
         {
             PlayerPrefs.DeleteAll();
+            startGameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Start Game";
         }
 
         private void SetStartGameButtonText()
@@ -47,7 +56,7 @@ namespace UI
             startGameButton.GetComponentInChildren<TextMeshProUGUI>().text =
                 IsAtLeastOneLevelCompleted ? "Continue Game" : "Start Game";
         }
-        
+
         private void CheckSelectLevelButtonVisibility()
         {
             var allLevelsCompleted = false; // todo _playStatManager.IsAllLevelsCompleted();

@@ -61,7 +61,7 @@ namespace Gameplay.Player.Managers
         public void ResetLightLevel()
         {
             playerView.ConusLight.pointLightOuterRadius = playerSettings.MaxLightRadius;
-            playerView.ConusLight.pointLightOuterRadius = 0.73f;
+            playerView.CircleLight.pointLightOuterRadius = 0.73f;
             UpdateCollider(playerSettings.MaxLightRadius);
         }
 
@@ -73,7 +73,7 @@ namespace Gameplay.Player.Managers
             if (nextValue <= playerSettings.MinLightRadius)
             {
                 nextValue = playerSettings.MinLightRadius;
-                playerView.ConusLight.pointLightOuterRadius = 0.1f;
+                playerView.CircleLight.pointLightOuterRadius = 0.1f;
             }
 
             playerView.ConusLight.pointLightOuterRadius = nextValue;
@@ -88,7 +88,7 @@ namespace Gameplay.Player.Managers
             if (nextValue >= playerSettings.MaxLightRadius)
             {
                 nextValue = playerSettings.MaxLightRadius;
-                playerView.ConusLight.pointLightOuterRadius = 0.73f;
+                playerView.CircleLight.pointLightOuterRadius = 0.73f;
             }
 
             playerView.ConusLight.pointLightOuterRadius = nextValue;
