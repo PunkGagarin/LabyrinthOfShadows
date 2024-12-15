@@ -8,17 +8,20 @@ namespace Gameplay.Enemies
 {
     public class BaseEnemy : MonoBehaviour
     {
-        [SerializeField] protected float _moveSpeed;
+        [SerializeField]
+        protected float _moveSpeed;
         //
         // [SerializeField]
         // protected Transform _spawnPoint;
 
-        [SerializeField] protected EnemyType _type;
+        [SerializeField]
+        protected EnemyType _type;
 
         [Inject] protected GridManager _gridManager;
         [Inject] protected Pathfinder _pathfinder;
         [Inject] protected GameplayManager _gameplayManager;
 
+        [SerializeField]
         protected EnemyAnimationSwitcher _animationSwitcher;
 
         protected Vector2Int _currentCell;
@@ -30,7 +33,7 @@ namespace Gameplay.Enemies
         {
             _currentCell = _currentCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
             _spawnPointCell = new Vector2Int((int)transform.position.x, (int)transform.position.y);
-            _animationSwitcher = GetComponent<EnemyAnimationSwitcher>();
+            // _animationSwitcher = GetComponentInChildren<EnemyAnimationSwitcher>();
         }
 
         protected virtual void Update()
@@ -49,16 +52,14 @@ namespace Gameplay.Enemies
 
                 transform.position = Vector3.MoveTowards(transform.position,
                     worldPos, _moveSpeed * Time.deltaTime);
-                
+
                 //todo: insert flip here depends on direction
 
                 if (Vector3.Distance(transform.position, worldPos) < 0.01f)
                     ReachPointLogic();
             }
             else
-            {
                 _animationSwitcher.SwitchAnimationToIdle();
-            }
         }
 
         protected virtual bool CanMove()
