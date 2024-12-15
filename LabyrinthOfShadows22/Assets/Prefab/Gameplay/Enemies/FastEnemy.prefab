@@ -182,15 +182,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.015
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4072
+      value: -0.535
       objectReference: {fileID: 0}
     - target: {fileID: 8079475184225759531, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144905643899872225, guid: 290faad29db71384488eced9cb69635f, type: 3}
+      propertyPath: m_Radius
+      value: 0.4306881
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144905643899872225, guid: 290faad29db71384488eced9cb69635f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06566398
       objectReference: {fileID: 0}
     - target: {fileID: 8554327197020104580, guid: 290faad29db71384488eced9cb69635f, type: 3}
       propertyPath: _highlightElements.Array.size

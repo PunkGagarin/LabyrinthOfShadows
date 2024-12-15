@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f61508ee17c4f3eb4eaea85beb2f097, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 4
+  <MoveSpeed>k__BackingField: 3
   <LightRadiusDecreasePerSecond>k__BackingField: 0.1
-  <LightRadiusDecreasingInterval>k__BackingField: 3
+  <LightRadiusIncreasePerSecond>k__BackingField: 0.5
+  <LightRadiusDecreasingInterval>k__BackingField: 1
+  <LightRadiusIncreasingInterval>k__BackingField: 1
   <MaxLightRadius>k__BackingField: 4
   <MinLightRadius>k__BackingField: 0.1
+  <LightColliderScale>k__BackingField: 0.7

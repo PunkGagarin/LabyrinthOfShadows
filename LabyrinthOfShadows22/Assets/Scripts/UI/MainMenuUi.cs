@@ -15,6 +15,7 @@ namespace UI
         [SerializeField] private Button selectLevelButton;
         [SerializeField] private OptionsDialog optionsDialog;
         [SerializeField] private SelectLevelUI selectLevelUI;
+        [SerializeField] private Button resetProgressButton;
 
         [Inject] private Loader loader;
         [Inject] private PlayStatManager _playStatManager;
@@ -25,6 +26,7 @@ namespace UI
             startGameButton.onClick.AddListener(OnStartGameClicked);
             optionsButton.onClick.AddListener(OnOptionsClicked);
             selectLevelButton.onClick.AddListener(OnSelectLevelClicked);
+            resetProgressButton.onClick.AddListener(ResetProgress);
             _musicManager.PlaySoundByType(GameAudioType.MainMenuBgm, 0);
         }
 
@@ -32,6 +34,11 @@ namespace UI
         {
             CheckSelectLevelButtonVisibility();
             SetStartGameButtonText();
+        }
+
+        private void ResetProgress()
+        {
+            PlayerPrefs.DeleteAll();
         }
 
         private void SetStartGameButtonText()
@@ -68,6 +75,7 @@ namespace UI
             startGameButton.onClick.RemoveListener(OnStartGameClicked);
             optionsButton.onClick.RemoveListener(OnOptionsClicked);
             selectLevelButton.onClick.RemoveListener(OnSelectLevelClicked);
+            resetProgressButton.onClick.RemoveListener(ResetProgress);
         }
     }
 }

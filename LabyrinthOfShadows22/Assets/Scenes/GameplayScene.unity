@@ -6094,6 +6094,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2134028749317029168, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 358.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134028749317029168, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.8126235
+      objectReference: {fileID: 0}
     - target: {fileID: 3536854560851498641, guid: 8ca2be31fe78ae14081000f022649a67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.74
