@@ -12,8 +12,9 @@ namespace Gameplay.Player.Managers
         [Inject] private PlayerSettings playerSettings;
         [Inject] private GameplayManager gameplayManager;
 
-        private float timer = 0f;
-        private float colliderScale = 0.70f;
+        private float decreaseTimer = 0f;
+        private float increaseTimer = 0f;
+        private bool isPlayerInSafeZone = false;
 
         private void Awake()
         {
@@ -25,11 +26,34 @@ namespace Gameplay.Player.Managers
         {
             if (!gameplayManager.IsGamePlaying()) return;
 
-            timer += Time.deltaTime;
-            if (timer >= playerSettings.LightRadiusDecreasingInterval)
+            decreaseTimer += Time.deltaTime;
+            increaseTimer += Time.deltaTime;
+
+            if (isPlayerInSafeZone)
             {
-                LowerLightLevel();
-                timer = 0f;
+                TryIncrease();
+            }
+            else
+            {
+                TryDecrease();
+            }
+        }
+
+        private void TryIncrease()
+        {
+            if (increaseTimer >= playerSettings.LightRadiusIncreasingInterval)
+            {
+                IncreaseLightLevel();
+                increaseTimer = 0f;
+            }
+        }
+
+        private void TryDecrease()
+        {
+            if (decreaseTimer >= playerSettings.LightRadiusDecreasingInterval)
+            {
+                DecreaseLightLevel();
+                decreaseTimer = 0f;
             }
         }
 
@@ -39,10 +63,10 @@ namespace Gameplay.Player.Managers
             UpdateCollider(playerSettings.MaxLightRadius);
         }
 
-        private void LowerLightLevel()
+        private void DecreaseLightLevel()
         {
             if (playerView.ConusLight.pointLightOuterRadius == playerSettings.MinLightRadius) return;
-            
+
             float nextValue = playerView.ConusLight.pointLightOuterRadius - playerSettings.LightRadiusDecreasePerSecond;
             if (nextValue <= playerSettings.MinLightRadius)
                 nextValue = playerSettings.MinLightRadius;
@@ -51,11 +75,32 @@ namespace Gameplay.Player.Managers
             UpdateCollider(nextValue);
         }
 
+        private void IncreaseLightLevel()
+        {
+            if (playerView.ConusLight.pointLightOuterRadius == playerSettings.MaxLightRadius) return;
+
+            float nextValue = playerView.ConusLight.pointLightOuterRadius + playerSettings.LightRadiusIncreasePerSecond;
+            if (nextValue >= playerSettings.MaxLightRadius)
+                nextValue = playerSettings.MaxLightRadius;
+
+            playerView.ConusLight.pointLightOuterRadius = nextValue;
+            UpdateCollider(nextValue);
+        }
+
         private void UpdateCollider(float nextValue)
         {
-            var value = nextValue * colliderScale;
+            var value = nextValue * playerSettings.LightColliderScale;
             playerView.ConusLightCollider.transform.localScale = new Vector3(value, value / 2, 1f);
         }
 
+        public void OnPlayerInSafeZone()
+        {
+            isPlayerInSafeZone = true;
+        }
+
+        public void OnPlayerOutOfSafeZone()
+        {
+            isPlayerInSafeZone = false;
+        }
     }
 }
