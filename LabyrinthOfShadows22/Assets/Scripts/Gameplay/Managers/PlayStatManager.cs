@@ -16,7 +16,7 @@ namespace Gameplay.Managers
 
         public bool IsGamePlayed() => PlayerPrefs.HasKey(LAST_COMPLETED_LEVEL);
 
-        public bool IsAllLevelsCompleted() => GetLastCompletedLevel() == levelRepositorySo.LevelsCount;
+        public bool IsThisLevelLast() => CurrentLevelIndex == levelRepositorySo.LevelsCount - 1;
 
         public void OnPlayStarting()
         {
@@ -24,7 +24,7 @@ namespace Gameplay.Managers
             int levelsCount = levelRepositorySo.LevelsCount;
             if (currentLevel >= levelsCount)
             {
-                Debug.Log("All levels completed"); // todo
+                CurrentLevelIndex = levelsCount;
                 return;
             }
 
