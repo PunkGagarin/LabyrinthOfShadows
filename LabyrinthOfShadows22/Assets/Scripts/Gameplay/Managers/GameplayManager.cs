@@ -13,6 +13,7 @@ namespace Gameplay.Managers
         [Inject] private LevelViewProvider levelViewProvider;
         [Inject] private PlayStatManager _playStatManager;
         [Inject] private MusicManager _musicManager;
+        [Inject] private SoundManager _soundManager;
 
         private bool _isPlaying = true;
         private bool _isPaused;
@@ -59,6 +60,7 @@ namespace Gameplay.Managers
 
         public void SetLevelWon()
         {
+            _soundManager.PlayOneShotByType(GameAudioType.LevelComplete, 0);
             _isPlaying = false;
             levelCompletedUi.Show();
             _playStatManager.UpdateLastCompletedLevel();
@@ -66,6 +68,7 @@ namespace Gameplay.Managers
 
         public void SetGameOver()
         {
+            _soundManager.PlayOneShotByType(GameAudioType.LevelFailed, 0);
             _isPlaying = false;
             levelFailedUi.Show();
         }
