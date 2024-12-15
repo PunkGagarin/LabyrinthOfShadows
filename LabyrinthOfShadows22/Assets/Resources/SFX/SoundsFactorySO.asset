@@ -28,3 +28,9 @@ MonoBehaviour:
   - _key: 5
     _value:
     - {fileID: 8300000, guid: 8425bb01b37074396abd04594ea2d95c, type: 3}
+  - _key: 7
+    _value:
+    - {fileID: 8300000, guid: fb7e82c963573488599bd32106315baa, type: 3}
+  - _key: 6
+    _value:
+    - {fileID: 8300000, guid: a55e675370a8d42d18547348a1462f2b, type: 3}
